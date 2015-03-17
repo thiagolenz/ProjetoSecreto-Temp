@@ -1,0 +1,12 @@
+
+
+*.class
+*.dll
+*.exe
+*.o
+*.so
+target
+.project
+.settings
+.classpath
+.DS_Store

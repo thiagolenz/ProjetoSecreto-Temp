@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc 
+    http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+    http://www.springframework.org/schema/beans     
+    http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context-3.1.xsd 
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx.xsd
+    http://www.springframework.org/schema/jee
+    http://www.springframework.org/schema/jee/spring-jee.xsd ">
+
+	<!-- Look up the Datasource that's been configured in JBoss as a JNDI datasource -->
+	<jee:jndi-lookup id="datasource" jndi-name="java:/nutrieducDS"
+		resource-ref="false" />
+		
+	<bean id="persistenceUnitName" class="java.lang.String">
+		<constructor-arg value="admin-profile-PU"></constructor-arg>
+	</bean>
+	
+	<!-- import the generic datasource configuration that is at common-svc/resources folder -->
+	<import resource="classpath*:relational-datasource-config.xml" />
+	<import resource="messages.xml" />
+	
+ 	<context:property-placeholder location="classpath*:configuration-general_${app.env}.properties" /> 
+
+	<!-- Other configurations  -->
+	<context:component-scan base-package="com.redfire" />
+
+	<mvc:annotation-driven />
+	<tx:annotation-driven />
+	
+	<!-- <import resource="classpath*:request-config.xml" />
+	 -->
+
+</beans>
