@@ -1,0 +1,5 @@
+define({
+	consultationClinicManagement: {
+		title: "Avaliações"
+	}
+});

@@ -1,0 +1,532 @@
+body {
+	padding-top: 100px;
+	height: 100%;
+	overflow-y: scroll;
+}
+.body-chat-users-open {
+	margin-right: 150px
+}
+
+.welcome-body {
+	background: url('../welcome/img/bg-home-nutrieduc.png') no-repeat center
+		center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#body {
+	min-height: 80%;
+}
+
+.align-right {
+	float: right;
+}
+
+.no-padding-right {
+	padding-right: 0px !important;
+}
+
+.no-padding-left {
+	padding-left: 0px !important;
+}
+
+.btn-link-custom {
+	font-weight: 400;
+	color: #337ab7;
+	border-radius: 0;
+	border: 1px solid transparent;
+	border-color: transparent;
+	background-color: white;
+}
+
+.one-fifty {
+	width: 19%;	
+}
+
+/**
+ Modal loading definitions
+*/
+.loading-modal-container {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.7);
+	position: absolute;
+	z-index: 2000
+}
+
+.loading-modal {
+	height: 200px;
+	width: 300px;
+	background-color: white;
+	border-style: solid;
+	border-radius: 4px 4px 4px 4px;
+	border-width: 1px;
+	border-color: #ddd;
+}
+
+.loading-modal h4 {
+	text-align: left;
+	margin: 5px;
+}
+
+.loading-modal img {
+	margin-top: 30px;
+}
+
+.loading-inside-modal {
+	position: absolute;
+	background: white;
+	opacity: 1;
+	z-index: 3000
+}
+
+/**
+  fixing some bootstrap bugs on MAC
+*/
+.modal-open,.modal-open .navbar-fixed-top {
+	margin-right: 0 !important;
+}
+
+/**
+  fixing bugs space on the strong label and message label of alert
+*/
+.alert strong {
+	margin-right: 5px
+}
+
+/**
+  input groups spacing 
+*/
+.input-line {
+	margin-bottom: 22px
+}
+
+.pagination-item:hover {
+	cursor: pointer;
+}
+
+.welcome-body {
+	background-image: url('../welcome/img/construction.jpg')
+}
+
+/* END AUTO COMPLETE */
+
+.border-right {
+	border-right: 1px solid #ddd;
+ 	border-radius: none;
+}
+
+.alert-warning2 {
+	background-color: #f0ad4e
+}
+
+.btn-xlarge {
+    padding: 18px 28px;
+    font-size: 18px;
+    width : 100%; 
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+}
+
+.row-parent {
+	font-weight: bold;
+}
+
+.breadcrumb li.disabled {
+	color: #666 !important;
+}
+
+.progress-bar-secondary {
+	background-color: #5b616a;
+}
+
+.page-info-block {
+	padding-top: 55px !important;	
+}
+.page-info {
+	padding-bottom: 0 !important;
+}
+
+#body .page-info {
+	border-bottom: none !important;
+}
+
+
+.table>thead>tr>th, 
+.table>tbody>tr>th, 
+.table>tfoot>tr>th, 
+.table>thead>tr>td, 
+.table>tbody>tr>td, 
+.table>tfoot>tr>td {
+	vertical-align: middle !important;
+}
+.accountAction {
+	padding: 7px;
+	margin-left: 0 !important;
+	margin-right: 0  !important;
+}
+.accountAction:hover {
+	cursor: pointer;
+	background-color: #ddd
+}
+
+.avatarUser {
+    float: left;
+    margin-top: 1em;
+    position: relative;
+
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+
+    -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+    box-shadow: 0 0 0 0px #fff, 0 0 0 1px #999, 0 1px 1px 1px rgba(0,0,0,.2);
+}
+
+.column {
+	float: left;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.one-fourth {
+	width: 25%
+}
+
+.three-fourth {
+	width: 75%
+}
+
+.pagination li a.disabled,
+.pagination li a.disabled:hover {
+	background-color: gray;
+	cursor: default;
+	color: white;
+	opacity: .65;
+}
+
+.spinLoading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.gridLoading {
+	text-align:center;
+	background-color: rgba(255, 255, 255);
+	z-index: 2000;
+}
+
+.spinLoadingGrid {
+	margin: auto;
+}
+
+.tipWidget500 {
+	border: 2px dashed #d6dbe1; 
+	width: 520px; 
+	float: right; 
+	padding: 20px
+}
+
+.loading {
+    background: transparent url('../img/loading.gif') no-repeat scroll center center content-box !important;
+}
+
+.wrap-indicator {
+    font-weight: bold;
+    color: #245269;
+    cursor: pointer;
+}
+
+/** override */ 
+.page-info-block {
+	background: #f9f9fb !important;
+}
+.content-block.default-bg {
+	background: #f9f9fb !important;
+}
+table {
+	background: white;
+}
+
+.loginBody {
+	height: 100%;
+}
+
+.circleButton {
+	 outline:none;
+ 	 border-radius:100% !important;
+ 	 font-size: 25px;
+  	 width:50px;
+  	 height:50px;
+}
+
+.featurePressentationItem {
+	text-align: center;
+}
+
+.labelFeature {
+	text-align: left;
+}
+
+/** tour */
+
+.tour-backdrop {
+	opacity : 0.4;
+}
+
+.popover.right>.arrow {
+	border-right-color: rgba(0, 142, 214, 1)
+}
+
+.tour-tour {
+	border: 1px solid #008ed6;
+}
+
+.tour-title {
+	background-color: #008ed6;
+	color: white;
+	border-radius: 0;
+}
+.tour-box {
+	padding: 0
+}
+
+.table-responsive-custom {
+	overflow-x: inherit !important;
+}
+
+-- switcher 
+.switcher-inside-circle {
+	transition: left 0.2s; 
+	-webkit-transition: left 0.2s; 
+	background-color: rgb(255, 255, 255);
+	left: 0px;
+}
+.switcher-inside-circle-true {
+	left: 20px;
+}
+.swither-blue-true {
+	border-color: rgb(65, 183, 241) !important; 
+	box-shadow: rgb(65, 183, 241) 0px 0px 0px 16px inset; 
+	transition: border 0.4s, box-shadow 0.4s, background-color 1.2s; 
+	-webkit-transition: border 0.4s, box-shadow 0.4s, background-color 1.2s; 
+	background-color: rgb(65, 183, 241);
+}
+
+.pin-button {
+	opacity: 0.5;
+	cursor: pointer;
+}
+
+.pin-button:hover {
+	opacity: 1;
+}
+
+.pin-button-selected {
+	color: #008ed6;
+	opacity: 1;
+}
+.pin-button-selected:hover {
+	opacity: 0.5;
+}
+
+/**
+  fixing some bootstrap bugs on MAC
+*/
+.modal-open,.modal-open .navbar-fixed-top {
+	margin-right: 0 !important;
+}
+
+/**
+  fixing bugs space on the strong label and message label of alert
+*/
+.alert strong {
+	margin-right: 5px
+}
+
+/**
+  input groups spacing 
+*/
+.input-line {
+	margin-bottom: 22px
+}
+
+.pagination-item:hover {
+	cursor: pointer;
+}
+.row {
+	margin-left: 0px !important;
+}
+
+.btn-secondary, .btn-secondary:focus{
+	background:  #008ed6;
+	color: #ffffff
+}
+.btn-secondary:hover {
+	background: rgba(0, 142, 214, 0.9);
+	color: #ffffff
+}
+.btn-success {
+	background: #07bf29;
+}
+
+.btn-success:hover, .btn-success:focus {
+	background: rgba(7, 191, 41, 0.7);
+	border-color: #07bf29;
+}
+
+.btn-default {
+	border-color: #ADADAD;
+}
+
+.btn-danger-custom:focus {
+	background: #e4051a;
+	color: white;
+}
+
+.use-case-title{
+	color: #008ed6;
+}
+
+.alphabet-filter-letter {
+	color: #008ed6;
+	padding: 5px; 
+	padding-top: 3px;
+	padding-bottom: 3px; 
+	cursor: pointer;
+}
+.alphabet-filter-letter.selected, .pagination-link.selected, pagination-link.selected:focus {
+	border: 1px solid #008ed6;
+	background: white;
+} 
+
+.breadcrumb-font {
+	color: #008ed6
+}
+
+img.img48_48 {
+  width: 48px;
+  height: 48px;
+}
+
+.progress-bar-nutrieduc {
+	background: #008ed6;
+}
+
+.panel-info > .panel-heading-nutrieduc {
+	color:  #008ed6;
+}
+
+.bluecolor, .bluecolor:focus, bluecolor:hover {
+	color : #008ed6 !important;
+}
+.greencolor {
+	color:  #07bf29;
+}
+
+#backgroundWide {
+	padding-left: 100px;
+	padding-right: 100px;
+	padding-bottom: 100px;
+}
+
+#normalBackground {
+	padding-top: 100px;
+}
+
+.bodyWhite {
+	background-color: #ffffff;
+}
+.welcome-feature-container {
+	max-width: 1028px;
+}
+
+.bodyWide {
+	padding-top: 0px;
+}
+
+.font-size-display {
+	font-size: 15px;
+}
+.font-size-display-md {
+	font-size: 17px;
+}
+
+.nutrieduc-modal-header {
+	background: #008ed6;
+	color: #ffffff !important;
+}
+.nutrieduc-modal-header > button.close{
+	color : #ffffff; 
+	opacity: 1;	 
+}
+
+.nutrieduc-modal-header > button.close:hover {
+	opacity: 0.8;	
+}
+
+.modal-vertical-centered {
+  transform: translate(0, 50%) !important;
+  -ms-transform: translate(0, 50%) !important; /* IE 9 */
+  -webkit-transform: translate(0, 50%) !important; /* Safari and Chrome */
+}
+
+
+.input-line-custom {
+	border: none;
+	background: none;
+	font-weight: bold;
+	padding: 0px;
+	padding-right: 10px;
+	padding-top: 3px;
+	vertical-align: text-top;
+}
+
+.avatar-image {
+	border: 1px solid #008ed6;
+}
+
+.imageBox{
+    height: 400px;
+    width: 400px;
+    border:1px solid #aaa;
+    background: #fff;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    cursor:move;
+}
+
+.label-picture {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.imageBox .thumbBox
+{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 1px solid rgb(102, 102, 102);
+    box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.5);
+    background: none repeat scroll 0% 0% transparent;
+}
+
+.imageBox .spinner
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    line-height: 400px;
+    background: rgba(0,0,0,0.7);
+}
+

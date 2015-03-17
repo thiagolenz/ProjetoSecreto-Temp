@@ -1,0 +1,5 @@
+define({
+	accountPatientsManagement: {
+		title: "Pacientes"
+	}
+});

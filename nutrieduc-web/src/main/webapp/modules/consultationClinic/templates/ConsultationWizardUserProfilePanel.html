@@ -1,0 +1,137 @@
+<div>
+	<h4>${consultation.patient}</h4>
+	<div class="row">
+		<div class="col-md-5">
+			<div class="form-group required">
+				<label class="control-label translate-mix capitalize" for="consultationCode">${consultation.name}<span>*</span></label>
+				<input type="text" class="form-control" id="consultationName" maxlength="150"
+					name="patientUser.name">
+			</div>
+		</div>
+
+		<div class="col-md-2 step4">
+			<div class="form-group">
+				<label class="control-label" for="consultationAge">${consultation.age}</label>
+				<input type="text" data-type="Integer" id="consultationAge"
+					class="form-control" data-name="userInfoProfile.age">
+			</div>
+		</div>
+
+		<div class="col-md-3">
+			<div class="form-group required">
+				<label class="translate-mix control-label"
+					for="consultationBirthDate">${consultation.birthDate}<span>*</span></label>
+				<div class="form-group">
+					<input type="text" data-type="DateMask" id="consultationBirthDate"
+						class="form-control dataTypeComponent" name="userInfoProfile.birthDate"
+						placeholder="${placeholder.date}">
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-2">
+			<div class="form-group step2">
+				<label class="control-label"
+					for="consultationGenderType">${consultation.genderType}</label>
+				<div id="genderTypeContainer"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-5">
+			<div class="form-group required">
+				<label class="control-label translate-mix" for="addressStreet">${consultation.addressStreet}<span>*</span></label>
+				<input type="text" class="form-control" id="addressStreet" maxlength="250"
+					name="userInfoProfile.addressStreet">
+			</div>
+		</div>
+
+		<div class="col-md-2">
+			<div class="form-group required">
+				<label class="control-label translate-mix" for="addressNumber">${consultation.addressNumber}<span>*</span></label>
+				<input type="text" class="form-control" id="addressNumber" maxlength="10"
+					name="userInfoProfile.addressNumber">
+			</div>
+		</div>
+
+		<div class="col-md-2">
+			<div class="form-group required">
+				<label class="control-label translate-mix" for="addressComplement">${consultation.addressComplement}<span>*</span></label>
+				<input type="text" class="form-control" id="addressComplement" maxlength="50"
+					name="userInfoProfile.addressComplement">
+			</div>
+		</div>
+
+		<div class="col-md-3">
+			<div class="form-group required">
+				<label class="translate-mix control-label"
+					for="consultationPhoneNumber">${consultation.phoneNumber}<span>*</span></label>
+				<input type="text" id="consultationPhoneNumber" maxlength="20"
+					class="form-control " name="userInfoProfile.phoneNumber">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-2 required">
+			<div class="form-group">
+				<label class="control-label translate-mix" for="documentNumber">${consultation.documentNumber}<span>*</span></label>
+				<input type="text" class="form-control" id="documentNumber" maxlength="20"
+					name="userInfoProfile.documentNumber">
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="form-group">
+				<label class="control-label" for="documentId">${consultation.documentId}</label>
+				<input type="text" class="form-control" data-type="masked" id="documentId"
+					name="userInfoProfile.documentId">
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="form-group required">
+				<label class="control-label translate-mix" for="consultationEmail">${consultation.email}<span>*</span></label>
+				<input type="text" class="form-control" id="consultationEmail" maxlength="100"
+					name="patientUser.email">
+			</div>
+		</div>
+		<div class="col-md-4 form-group required">
+			<label class="translate-mix control-label"
+				for="consultationPhoneNumber">${consultation.objective}<span>*</span></label>
+			<input type="text" id="consultationObjective" class="form-control" maxlength="200"
+				name="consultation.objective">
+		</div>
+	</div>
+
+	<h4>${consultation.nutritionistUser}</h4>
+	<div class="row">
+		<div class="col-md-4 step5">
+			<div class="form-group required">
+				<label class="control-label translate-mix">${consultation.nutritionistUser}<span>*</span></label>
+				<div id="nutritionistAutoCompleteContainer"
+					data-name="consultation.userNutritionist" data-type="AutoComplete"></div>
+			</div>
+		</div>
+		
+		<div class="col-md-4">
+			<div class="form-group required">
+				<label class="translate-mix control-label"
+					for="consultationHowKnewMyWork">${consultation.howKnewMyWork}<span>*</span></label>
+				<input type="text" id="consultationHowKnewMyWork" maxlength="255"
+					class="form-control " name="consultation.howKnewMyWork">
+			</div>
+		</div>
+
+		<div class="col-md-2">
+			<div class="form-group">
+				<label class="control-label translate-mix"
+					for="consultationValidityDate">${consultation.consultDate}<span>*</span></label>
+				<div class="form-group">
+					<input type="text" data-type="DateMask" id="consultationDate"
+						class="form-control dataTypeComponent" name="consultation.consultDate"
+						placeholder="${placeholder.date}">
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

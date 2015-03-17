@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:int="http://www.springframework.org/schema/integration"
+       xmlns:int-jms="http://www.springframework.org/schema/integration/jms"
+       xmlns:oxm="http://www.springframework.org/schema/oxm"
+       xmlns:int-jme="http://www.springframework.org/schema/integration"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd
+                http://www.springframework.org/schema/integration/jms http://www.springframework.org/schema/integration/jms/spring-integration-jms.xsd
+                http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm.xsd">
+
+	
+	<context:component-scan base-package="com.redfire" />
+
+
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <property name="order" value="1" />
+        <property name="messageConverters">
+            <list>
+                <!-- Default converters -->
+                <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
+                <bean class="org.springframework.http.converter.FormHttpMessageConverter"/>
+                <bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter" />
+                <bean class="org.springframework.http.converter.xml.SourceHttpMessageConverter"/>
+                <bean class="org.springframework.http.converter.BufferedImageHttpMessageConverter"/>
+                <bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
+            </list>
+        </property>
+    </bean>
+
+    <!-- Define a channel to communicate out to a JMS Destination -->
+    <int:channel id="emailChannel"/>
+    <int:channel id="pushMobileChannel"/>
+
+    <!-- Define the ActiveMQ connection factory -->
+    <bean id="connectionFactory" class="org.apache.activemq.spring.ActiveMQConnectionFactory">
+        <property name="brokerURL" value="tcp://localhost:61616"/>
+        <property name="userName" value="admin" />
+		<property name="password" value="admin" />
+    </bean>
+
+    <!--
+        Define an adaptor that route topicChannel messages to the myTopic topic; the outbound-channel-adapter
+        automagically finds the configured connectionFactory bean (by naming convention)
+      -->
+    <int-jms:outbound-channel-adapter channel="emailChannel"
+                                      destination-name="redfire.nutrieduc.EmailTopic"
+                                      pub-sub-domain="true" />
+                                      
+	<int-jms:outbound-channel-adapter channel="pushMobileChannel"
+                                      destination-name="redfire.nutrieduc.PushMobileTopic"
+                                      pub-sub-domain="true" />
+
+    <!-- Create a channel for a listener that will consume messages-->
+    <int:channel id="listenerChannel" />
+
+    <int-jms:message-driven-channel-adapter id="messageDrivenAdapterEmail"
+                                            channel="emailListenerChannel"
+                                            destination-name="redfire.nutrieduc.EmailTopic"
+                                            pub-sub-domain="true" />
+                                            
+ 	<int-jms:message-driven-channel-adapter id="messageDrivenAdapterPushMobile"
+                                            channel="pushMobileListenerChannel"
+                                            destination-name="redfire.nutrieduc.PushMobileTopic"
+                                            pub-sub-domain="true" />
+
+    <int:service-activator input-channel="pushMobileListenerChannel" ref="pushMobileListenerImpl" method="processMessage" />
+    <int:service-activator input-channel="emailListenerChannel" ref="emailListenerImpl" method="processMessage" />
+
+</beans>

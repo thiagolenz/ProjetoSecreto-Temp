@@ -1,0 +1,89 @@
+<div>
+	<ul class="nav nav-tabs" id="myTab">
+		<li class="active"><a data-toggle="tab" href="#measuresTab">Medidas</a></li>
+		<li><a data-toggle="tab" class="step2" href="#picturesTab">Fotos</a></li>
+	</ul>
+	<div class="tab-content" id="myTabContent">
+		<div id="measuresTab" class="tab-pane fade active in">
+			<div class="margin10" id="gridMeasures"></div>
+		</div>
+		<div id="picturesTab" class="tab-pane fade in">
+			<div class="form-group">
+				<label>Avatar do Usuário</label>
+				<div class="row margin10">
+					<div class="col-md-2">
+						<img id="userAvatar" height="auto" width="100%"
+							src="data:image/png;base64," />
+					</div>
+					<div class="col-md-10">
+						<div class=" input-group-btn">
+							<div class="btn btn-success btn-file">
+								<i class="glyphicon glyphicon-picture"></i> Selecionar Imagem <input
+									id="userAvatarInput" type="file" accept="image/*" class="">
+							</div>
+						</div>
+						<p>Selecione uma imagem para o perfil do usuário</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="row padding-right-0 margin10">
+				<div class="col-md-3 padding-20">
+					<label class="bluecolor text-center label-picture">Perfil
+						Frente</label> <img id="frontPicture" height="auto" width="100%"
+						class="avatar-image " src="data:image/png;base64," />
+					<div class="margin10 text-center">
+						<div class=" input-group-btn">
+							<div class="btn btn-success btn-file">
+								<i class="glyphicon glyphicon-picture"></i> Selecionar Imagem
+								<input id="frontPictureInput" type="file" accept="image/*" class="">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 padding-20">
+					<label class="bluecolor text-center label-picture">Perfil
+						Costas</label> <img id="backPicture" height="auto" width="100%"
+						class="avatar-image" src="data:image/png;base64," />
+					<div class="margin10 text-center">
+						<div class=" input-group-btn">
+							<div class="btn btn-success btn-file">
+								<i class="glyphicon glyphicon-picture"></i> Selecionar Imagem
+								<input id="backPictureInput" type="file" accept="image/*" class="">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 padding-20">
+					<label class="bluecolor text-center label-picture">Perfil
+						Esquerda</label> <img id="leftPicture" height="auto" width="100%"
+						class="avatar-image " src="data:image/png;base64," />
+					<div class="margin10 text-center">
+						<div class=" input-group-btn">
+							<div class="btn btn-success btn-file">
+								<i class="glyphicon glyphicon-picture"></i> Selecionar Imagem
+								<input id="leftPictureInput" type="file" accept="image/*" class="">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 padding-20">
+					<label class="bluecolor text-center label-picture">Perfil
+						Direita</label> <img id="rightPicture" height="auto" width="100%"
+						class="avatar-image " src="data:image/png;base64," />
+					<div class="margin10 text-center">
+						<div class=" input-group-btn">
+							<div class="btn btn-success btn-file">
+								<i class="glyphicon glyphicon-picture"></i> Selecionar Imagem
+								<input id="rightPictureInput" type="file" accept="image/*" class="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<input type="hidden" id="defaultAvatar"
+	value="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">

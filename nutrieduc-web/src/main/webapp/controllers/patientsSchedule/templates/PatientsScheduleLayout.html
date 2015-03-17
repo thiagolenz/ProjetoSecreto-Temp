@@ -1,0 +1,35 @@
+<h3 style="color: #008ed6">${patientsScheduleManagement.title}</h3>
+<nav class="navbar navbar-default" role="navigation">
+	<div class="row margin10">
+		<div class="col-md-4 form-group">
+			<label class="control-label">${patientsSchedule.nutritionist}</label>
+			<div id="autoCompleteNutritionistFilter" data-type="AutoComplete" data-name="patientsScheduleFilter.nutritionistUser"></div>
+		</div>
+
+		<div class="col-md-4 form-group">
+			<label class="control-label">${patientsSchedule.patient}</label>
+			<div id="autoCompletePatientFilter" data-type="AutoComplete" data-name="patientsScheduleFilter.patientUser"></div>
+		</div>
+
+		<div class="col-md-4">
+			<div class="nav navbar-nav navbar-right margin10">
+				<button type="button" id="btnNewAbsence"
+					class="btn btn-danger">${patientsSchedule.form.newAbsence}</button>
+				<button type="button" id="btnNewAppointment"
+					class="btn btn-success">${patientsSchedule.form.newAppointment}</button>
+			</div>
+		</div>
+	</div>
+</nav>
+<div class="row">
+	<div class="col-md-3" style="background-color: white;">
+		<div id="selectedDate"></div>
+		<div style="text-align:center">
+			<button class="btn btn-default" id="btnClean">${patientsScheduleManagement.clean}</button>
+			<button class="btn btn-default" id="btnToday">${patientsScheduleManagement.today}</button>
+		</div>
+	</div>
+	<div id="gridContainer" class="col-md-9"></div>
+</div>
+
+

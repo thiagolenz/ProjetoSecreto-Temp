@@ -1,0 +1,152 @@
+.nutrieduc-logo {
+	margin-top: 5px;
+}
+.navbar-nutrieduc {
+	background: #008ed6;
+	border : 0px;
+	margin-top: 0px !important;
+}
+
+.navbar-nav.navbar-right:last-child {
+	margin-right: 10px !important;
+}
+
+.navbar-nutrieduc .navbar-brand ,
+.navbar-nutrieduc .navbar-nav > li a {
+	color: #ffffff;	
+	padding: 5px;
+	margin-top: 10px;
+	margin-left: 20px;
+	border-radius:5px;
+}
+.navbar-nutrieduc .navbar-nav > .open > a {
+	background:  #ffffff;
+	color: #008ed6; 
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+	color:  #008ed6;
+	background: #ffffff;
+}
+.active-menu {
+	color:  #008ed6 !important;
+	background: #ffffff !important;
+	padding: 5px;
+}
+
+.nav .dropdown-menu a, .nav .dropdown-menu > li > a{
+	background: #ffffff;
+	color: #838383;
+	padding: 5px;
+}
+.nav .dropdown-menu a:hover {
+	color:  #ff9c00;
+	background: #ffffff;
+}
+
+.navbar-menus > li {
+	margin-top: 10px;
+	font-size: 16px;
+}
+
+.welcome-message {
+	color: #008ed6;
+	font-size: 14px;
+	margin-left: 20px;
+	margin-top: 0px;
+	height: 10px;
+	vertical-align: middle;
+}
+.welcome-name {
+	font-size: 12px; 
+}
+.profileMenu {
+	padding-top: 10px !important;
+	padding-bottom: 10px !important;
+}
+.nav-profile .dropdown-menu {
+	width: 200px;
+}
+
+.notifyItem {
+	padding: 0px;
+	margin: 6px !important;
+	margin-top: 15px !important;
+	margin-left: 0px !important;
+	font-size: 22px;
+}
+
+.notifyItem a {
+	padding-left: 6px !important;
+	margin-top: 10px;
+	margin-left: 8px !important;
+}
+
+.profileMenu:hover, 
+.profileMenu:hover,
+.navbar-nutrieduc .navbar-nav > li a.profileMenu{
+	color:  #ffffff !important;
+	background: #008ed6 !important;
+}
+
+.notifyItem a:hover {
+	color: #F0F1FD !important;
+	background: #008ed6 !important;
+}
+
+.notifyItem img {
+	height: 18px;
+	width: auto;
+}
+
+.notifyBadge {
+    position:absolute;
+    top: -3px;
+    left: 16px;
+    padding:0px 4px 0px 4px;
+    background-color:#ff9c00;
+    color:white;
+    font-weight:bold;
+    font-size:10px;
+    
+    border-radius:3px;
+    box-shadow:1px 1px 1px gray;
+}
+.notifyBadgeBigger {
+	left: 18px;
+}
+
+.navbar-nutrieduc .navbar-nav > li a.profileMenuItem {
+	padding: 5px;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+.profileMenuItem span{
+	color : #838383;
+}
+.nav .dropdown-menu a.profileMenuItem:hover {
+	background: #ffffff;
+	color : #008ed6;
+}
+.nav .dropdown-menu a.profileMenuItem:hover span, .notifyHasMessage{
+	background: #ffffff;
+	color : #ff9c00;
+}
+a.profileMenuItem .badge, a.profileMenuItem .badge:hover {
+	background: #ff9c00 !important;
+	color: #ffffff !important;
+	border-radius:3px;
+	margin-right: 0px;
+	float: right;
+}
+
+/**
+ deslocamento da arrow para a esquerda
+*/
+.dropdown-menu.with-arrow.pull-right.custom-arrow:after {
+	right: 25px;
+}
+.dropdown-menu.with-arrow.pull-right.custom-arrow:before {
+	right: 24px;
+}
+

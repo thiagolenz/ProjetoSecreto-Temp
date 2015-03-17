@@ -1,0 +1,43 @@
+<h3 class="use-case-title">${consultationHistory.title}</h3>
+
+<nav class="navbar navbar-default" role="navigation">
+	<div class="row">
+		<div class="form-group col-md-5">
+			<label class="control-label">Entre as Datas</label>
+			<div class="row">
+				<div class="col-md-5">
+					<input class="form-control dataType" id="dateStart">
+				</div>
+				<div class="col-md-1">e</div>
+				<div class="col-md-5">
+					<input class="form-control col-md-2 dataType" id="dateEnd" >
+				</div>
+			</div>
+		</div>
+		<div class="col-md-1 form-group">
+			<button class="btn btn-secondary margin-top-25 translate-mix"
+				id="btnSearch">
+				${search}<span class="margin-left-5 glyphicon glyphicon-search"></span>
+			</button>
+		</div>
+	</div>
+</nav>
+<nav class="navbar navbar-default" role="navigation">
+	<div class="row font-size-display">
+		<div class="col-md-4 form-group">
+			<label class="control-label bluecolor">Paciente</label>
+			<div id="userPatientName"></div>
+		</div>
+
+		<div class="col-md-2 form-group">
+			<label class="control-label bluecolor">Idade</label>
+			<div id="userPatientAge"></div>
+		</div>
+
+		<div class="col-md-2 form-group">
+			<label class="control-label bluecolor">E-Mail</label>
+			<div id="userPatientEmail"></div>
+		</div>
+	</div>
+</nav>
+<div id="gridContainer"></div>

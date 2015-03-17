@@ -1,0 +1,79 @@
+<div class="modal" id="modalAccountPatientForm" tabindex="-1"
+	role="dialog" aria-labelledby="modalAccountPatientFormLabel"
+	aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-hidden="true">&times;</button>
+				<h4 class="modal-title">${accountPatients.form.title}</h4>
+			</div>
+			<div id="modal-messages"></div>
+			<div class="modal-body">
+
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+					<li class="active"><a href="#searchUser" role="tab"
+						data-toggle="tab">${accountPatients.form.tab.searchUser}</a></li>
+					<li><a href="#tabAddUser" role="tab" data-toggle="tab">${accountPatients.form.tab.addNewUser}</a></li>
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<div class="tab-pane active" id="searchUser">
+						<div class="margin-top10 ">
+							<div class="row">
+								<div class="col-lg-8 form-group">
+									<input type="email" class="form-control" id="search"
+										name="filter.name"
+										placeholder="${accountPatients.placeholder.search}">
+								</div>
+								<button type="button" id="btnSearch"
+									class="btn btn-primary translate-mix">
+									${accountPatients.form.search}<span
+										class="glyphicon glyphicon-search margin-left-10"></span>
+								</button>
+							</div>
+							<div id="gridContainerModal"></div>
+						</div>
+
+					</div>
+					<div class="tab-pane" id="tabAddUser">
+						<div class="margin-top10">
+							<div class="row">
+								<div class="col-lg-8 form-group required">
+									<label for="userName" class="control-label translate-mix">${accountPatients.name}<span>*</span></label>
+									<input type="email" class="form-control" id="userName"
+										name="user.name"
+										placeholder="${accountPatients.placeholder.name}">
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-md-4 form-group required">
+									<label for="userLogin" class="control-label translate-mix">${accountPatients.login}<span>*</span></label>
+									<input type="email" class="form-control" id="userLogin"
+										name="user.login"
+										placeholder="${accountPatients.placeholder.login}">
+								</div>
+								
+								<div class="col-md-4 form-group required">
+									<label for="userLoginConfirm" class="control-label translate-mix">${accountPatients.loginConfirm}<span>*</span></label>
+									<input type="email" class="form-control" id="userLoginConfirm" data-just-reading="true" data-name="user.loginConfirm" 
+										placeholder="${accountPatients.placeholder.login}">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" id="btnModalPhaseInputFormCancel"
+					tabindex="-1" class="btn btn-default" data-dismiss="modal">${cancel}</button>
+				<button type="button" id="btnModalPhaseInputFormOk"
+					class="btn btn-primary">Ok</button>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,411 @@
+.font-size-13 {
+	font-size: 13px;
+}
+
+.font-size-14 {
+	font-size: 14px;
+}
+
+.loginButton {
+	border: 1px solid #008ed6;
+    border-radius: 0px;
+    line-height: 30px !important;
+    margin-top: 26px;
+    width: 88px;
+}
+
+.loginButton a {
+	color: black;
+}
+
+.loginButton a:hover {
+	color: #008ed6;
+	text-decoration:none;  
+}
+
+.socialNetwork a:hover {
+	opacity: 0.7;
+	text-decoration:none;  
+}
+.socialNetworkLabel {
+	color: #008ed6;
+}
+
+.contact-info .contact-links a {
+	padding-top: 0px; 
+	padding-bottom: 0px; 
+}
+
+.modalIsOpen {
+	overflow: hidden !important;
+	padding-right: 0px !important;
+}
+
+/** login modal */
+.loginModal {
+	position: fixed;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+ 	background: white;
+  width:520px;
+  height: 340px;
+  border: 1px solid #008ed6;
+  border-radius: 3%;
+  z-index: 2000;
+}
+
+@media only screen and (max-width : 420px) {
+	.loginModalSize {
+		 width:300px !important;
+		 border-radius: 5%;
+	}
+}
+
+.loginModalContent input{
+	border: 0px !important;
+	width: 90%;
+	margin-top: 9px;
+	margin-left: -50px;
+	font-size: 14px;
+	border: 1px solid transparent;
+	outline: 0px !important;
+	background: transparent;
+	height: 100%;
+	padding-left: 0px !important
+
+	-webkit-border-bottom-left-radius: 9px;
+	-webkit-border-bottom-right-radius: 9px;
+	-moz-border-radius-bottomleft: 9px;
+	-moz-border-radius-bottomright: 9px;
+	border-bottom-left-radius: 9px;
+	border-bottom-right-radius: 9px;
+}
+
+
+.loginField {
+	margin: 20px;
+	border: 1px solid;
+	margin-right: 12px;
+}
+
+.loginField span{
+	margin-top: 7px;
+}
+
+.loginFieldFocus {
+	border: 1px solid #008ed6;	
+}
+
+#loginModalBackDrop {
+	position: fixed;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	opacity: 0.6;
+	z-index: 1500;
+}
+
+.loginModalHeader {
+	background-color:  #008ed6;
+	-webkit-border-top-left-radius: 4px;
+	-webkit-border-top-right-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+	-moz-border-radius-topright: 4px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	color: white !important;
+}
+.loginModalHeader button {
+	opacity: 1;
+}
+.loginModalHeader span {
+	color: white !important;
+}
+.loginForgotPassword {
+	margin-top: -20px;
+}
+.loginForgotPassword a {
+	font-size: 12px;
+	float: left;
+	margin-left: 20px;
+	margin-top: 0px;
+}
+
+.loginActions {
+	text-align: right;
+	margin-bottom: 15px
+}
+
+/** end login */
+
+/** register modal */
+.registerModal {
+	font-size: 14px;
+	position: fixed;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+ 	background: white;
+  width: 720px;
+  height: 435px;
+  border: 1px solid #008ed6;
+  border-radius: 3%;
+  z-index: 2000;
+}
+
+@media only screen and (max-width : 420px) {
+	.registerModalSize {
+		 width:300px !important;
+		 height: 575px;
+		 border-radius: 5%;
+	}
+	.registerModalContent {
+		height: 425px !important;
+	}
+}
+
+.registerModalContent {
+	height: 275px;
+}
+
+/*.registerModalContent input{
+	border: 0px !important;
+	width: 90%;
+	margin-top: 9px;
+	margin-left: -50px;
+	font-size: 14px;
+	border: 1px solid transparent;
+	outline: 0px !important;
+	background: transparent;
+	height: 100%;
+	padding-left: 0px !important
+}*/
+
+
+.registerField {
+	text-align: left;
+}
+
+.registerField span{
+	margin-top: 7px;
+}
+.registerField input {
+	margin-top: 0px !important;
+}
+
+.registerFieldFocus {
+	border: 1px solid #008ed6;	
+}
+
+#registerModalBackDrop {
+	position: fixed;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	opacity: 0.6;
+	z-index: 1500;
+}
+.registerModalHeader {
+	height: 80px;
+	-webkit-border-top-left-radius: 9px;
+	-webkit-border-top-right-radius: 9px;
+	-moz-border-radius-topleft: 9px;
+	-moz-border-radius-topright: 9px;
+	border-top-left-radius: 9px;
+	border-top-right-radius: 9px;
+}
+
+.registerForgotPassword {
+	margin-top: -20px;
+}
+
+.registerForgotPassword a {
+	font-size: 12px;
+	float: left;
+	margin-left: 20px;
+	margin-top: 0px;
+}
+
+.registerActions {
+	text-align: right;
+}
+
+/** end register modal */
+
+.navBarBrandCustom {
+	padding: 5px !important;
+}
+
+.navBarHeader  {
+	min-height: 85px !important
+}
+
+.sticky-navigation .main-navigation li a {
+	line-height: 52px !important;
+}
+
+/** FLAG */
+.firstFlag {
+	margin-left: 30px !important;
+}
+
+.menuNavFlag {
+	line-height: 30px;
+	margin-top: 30px;
+	margin-left: 10px;
+}
+.menuNavFlag img:hover {
+	opacity: 0.6;
+}
+
+/** WELCOME Message and main logo */
+.fontIntro {
+	font-size: 2.6rem;
+}
+
+.fontIntroSentence {
+	text-align: right;
+}
+
+.messageWelcome {
+	width: 700px;
+	margin-left: 20%;
+	margin-right: 20%
+}
+.mainLogoWelcome {
+	max-width: 225px !important;
+}
+/* END WELCOME */
+
+/** BACKGROUND */
+
+@media only screen and (max-width : 420px) {
+ .headerNutrieduc {
+	background: url(../images/mobile_tablet_medio.jpg) no-repeat center top fixed !important; 
+	background-size: cover !important;
+	background-attachment: scroll !important;
+ }
+}
+
+@media only screen and (max-width : 1024px) and (min-width: 420px) {
+ 	.headerNutrieduc {
+		background: url(../images/WelcomeNutrieduc.jpg) no-repeat center top fixed !important; 
+		background-size: cover !important;
+		background-attachment: scroll !important;
+  }
+}
+
+@media only screen and (min-width : 1025px) {
+	.headerNutrieduc {
+		background: url(../images/WelcomeNutrieduc.jpg) no-repeat center top fixed !important; 
+		background-size: cover !important;
+		background-attachment: scroll !important;
+  }
+} 
+
+.headerOverlay {
+	background: rgba(0, 5, 8, 0) ;
+}
+
+/** PUBLICATION LINKS */
+.publicationsContainer li img {
+	max-height: 55px !important;
+}
+.modal-content button {
+	width: auto;
+}
+
+.modal-content {
+	padding: 0px !important;
+}
+/** END PUBLICATION LINKS */
+
+/** CONTATO */ 
+
+.modalButton {
+	width: 150px !important;
+	background-color: #008ed6;
+}
+
+.alertError {
+	color: red;
+}
+
+.contactButton {
+  background: #008ed6;
+  border-radius:100%;
+  width:50px;
+  height:50px;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+}
+/** END CONTATO */
+
+.trialImageBackground {
+   background:  rgba(0, 5, 8, 0.6) !important;
+}
+
+.btnPrimary {
+	width: auto !important;
+}
+
+.noMarginSide {
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+}
+
+.avatarTeam {
+	border: 0px !important; 
+	border-radius: 3px;
+}
+
+.memberInfo {
+	background: none !important;
+	padding-top: 40px;
+	width:100%;
+}
+
+.marginRight10 {
+	margin-right: 10px;
+
+}
+.marginLeft10 {
+	margin-left: 10px !important;
+}
+
+body.modal-open {
+	margin-right: 0px !important;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar {
+	background-color: black;
+}
+
+.member-pic img:hover {
+	-webkit-filter: opacity(50%);
+	filter: opacity(50%);
+	-moz-filter: opacity(50%);
+	-o-filter: opacity(50%);
+	-ms-filter: opacity(50%);
+}
+.mobileAppButton:hover {
+	border: 1px solid #008ed6;
+    border-radius: 3px;
+}
+
+.textJustify {
+	text-align: justify;
+}

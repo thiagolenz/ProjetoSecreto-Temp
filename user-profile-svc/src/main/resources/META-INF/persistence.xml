@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+    <persistence-unit name="user-profile-PU" transaction-type="JTA">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <jta-data-source>java:/nutrieducDS</jta-data-source>
+        <class>com.redfire.nutrieduc.entities.user.User</class>
+        <class>com.redfire.nutrieduc.entities.user.UserInfoProfile</class>
+        <class>com.redfire.nutrieduc.entities.user.UserAvatar</class>
+        <class>com.redfire.nutrieduc.entities.user.UserSocialMediaLogin</class>
+        <class>com.redfire.nutrieduc.entities.user.ChangePasswordToken</class>
+        <class>com.redfire.nutrieduc.entities.account.Account</class>
+        <class>com.redfire.nutrieduc.entities.account.AccountPatient</class>
+        <class>com.redfire.nutrieduc.entities.appointment.Appointment</class>
+        <class>com.redfire.nutrieduc.entities.mobile.CellPhoneRegister</class>
+        <class>com.redfire.nutrieduc.entities.consultation.Consultation</class>
+        <class>com.redfire.nutrieduc.entities.consultation.ConsultationClinicalData</class>
+        <class>com.redfire.nutrieduc.entities.consultation.ConsultationLifeHabit</class>
+        <class>com.redfire.nutrieduc.entities.consultation.ConsultationEatingHabit</class>
+        <class>com.redfire.nutrieduc.entities.consultation.ConsultationBodyMeasure</class>
+        <class>com.redfire.nutrieduc.entities.consultation.ConsultationUserPicture</class>
+        <properties>
+            <property name="hibernate.archive.autodetection" value="class, hbm"/>
+            <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.current_session_context_class" value="jta"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>          
+        </properties>
+    </persistence-unit>
+</persistence>

@@ -1,0 +1,49 @@
+<div>
+	<div class="row">
+		<div class="col-md-4 form-group required">
+			<label class="control-label translate-mix">${patientsSchedule.nutritionist}<span>*</span></label>
+			<div id="autoCompleteNutritionist" data-type="AutoComplete" data-name="patientsSchedule.nutritionistUser"></div>
+		</div>
+
+		<div class="col-md-4 form-group required" id="patientContainer">
+			<label class="control-label translate-mix">${patientsSchedule.patient}<span>*</span></label>
+			<div id="autoCompletePatient" data-type="AutoComplete" data-name="patientsSchedule.patientUser"></div>
+		</div>
+
+	</div>
+
+	<div class="row">
+		<div class="col-md-2 form-group required" style="z-index: 2000">
+			<label class="control-label translate-mix">${patientsSchedule.date}<span>*</span></label> <input
+				type="text" data-type="Date" id="patientsScheduleDate" class="form-control dataType"
+				name="patientsSchedule.date" data-just-reading="true"
+				placeholder="${placeholder.date}">
+		</div>
+
+		<div class="col-md-2 form-group required">
+			<label class="control-label translate-mix">${patientsSchedule.startTime}<span>*</span></label> <input
+				type="text" data-type="Hour" class="form-control" id="startTime"
+				name="patientsSchedule.startTime" data-just-reading="true">
+		</div>
+
+		<div class="col-md-2 form-group required">
+			<label class="control-label translate-mix">${patientsSchedule.finishTime}<span>*</span></label> <input
+				type="text" data-type="Hour" class="form-control" id="finishTime"
+				name="patientsSchedule.finishTime" data-just-reading="true">
+		</div>
+
+		<div class="col-md-4 form-group required">
+			<label class="control-label translate-mix">${patientsSchedule.description}<span>*</span></label>
+			<input type="text" class="form-control"
+				name="patientsSchedule.description"
+				placeholder="${patientsSchedule.placeholder.description}">
+		</div>
+	</div>
+	<div class="row">
+		<div class="form-group col-md-10">
+			<label class="control-label">${patientsSchedule.observation}</label>
+			<textarea class="form-control" name="patientsSchedule.observation"
+				placeholder="${patientsSchedule.placeholder.observation}"></textarea>
+		</div>
+	</div>
+</div>

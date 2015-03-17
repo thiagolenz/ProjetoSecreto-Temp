@@ -1,0 +1,80 @@
+<div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group">
+				<label class="control-label"
+					for="consultationDiseasesInTreatment">${consultation.diseasesInTreatment}</label>
+				<input type="text" class="form-control"
+					id="consultationDiseasesInTreatment"
+					name="clinicalData.diseasesInTreatment" maxlength="250"
+					placeholder="${consultation.placeholder.diseasesInTreatment}">
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<div class="form-group">
+				<label class="control-label"
+					for="consultationMedicationsInUse">${consultation.medicationsInUse}</label>
+				<input type="text" class="form-control"
+					id="consultationMedicationsInUse"
+					name="clinicalData.medicationsInUse" maxlength="250"
+					placeholder="${consultation.placeholder.medicationsInUse}">
+			</div>
+		</div>
+
+	</div>
+
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group">
+				<label class="control-label"
+					for="stomachSurgeryContainer">${consultation.didStomachSurgery}</label>
+				<div id="stomachSurgeryContainer"
+					data-name="clinicalData.didStomachSurgery"></div>
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<div class="form-group">
+				<label class="control-label"
+					for="intestineFrequencyTypeContainer">${consultation.intestineFrequencyType}</label>
+				<div id="intestineFrequencyTypeContainer"
+					data-name="clinicalData.intestineFrequencyType"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="form-group">
+				<label class="control-label" for="therapyContainer">${consultation.didTherapy}</label>
+				<div id="therapyContainer" data-name="clinicalData.didTherapy"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+
+		<div class="col-md-6">
+			<div class="form-group step2">
+				<label class="control-label"
+					for="consultationGenderType">${consultation.bloodType}</label>
+				<div id="bloodTypeContainer" data-name="clinicalData.bloodType"></div>
+			</div>
+		</div>
+
+		<div class="col-md-4">
+			<div class="form-group">
+				<label class="control-label"
+					for="consultationValidityDate">${consultation.lastTypeDidBloodExam}</label>
+				<input type="text" class="form-control"
+					id="consultationLastTypeDidBloodExam"
+					name="clinicalData.lastTypeDidBloodExam"
+					placeholder="${consultation.placeholder.lastTypeDidBloodExam}">
+			</div>
+		</div>
+
+	</div>
+
+
+</div>

@@ -1,0 +1,105 @@
+define({
+	consultation:  {
+		name : "Nome",
+		email: "Email",
+		password : "Senha",
+		passwordConfirm : "Confirme a Senha",
+		history : "Histórico",
+		genderType : "Sexo",
+		birthDate : "Data de Nascimento",
+		age : "Idade",
+		phoneNumber : "Telefone",
+		howKnewMyWork : "Como conheceu meu trabalho?",
+		consultDate : "Data de Consulta",
+		nutritionistUser : "Nutricionista",
+		patient: "Paciente",
+		objective : "Objetivo da Consulta",
+		addressStreet : "Endereço (rua)",
+		addressNumber : "Número",
+		addressComplement : "Complemento",
+		documentNumber: "RG",
+		documentId : "CPF",
+		
+		diseasesInTreatment : "Doenças em tratamento",
+		medicationsInUse : "Medicamentos em uso",
+		bloodType : "Tipo sanguíneo",
+		didStomachSurgery : "Já fez alguma cirurgia do aparelho digestivo?",
+		intestineFrequencyType : "Intestino",
+		didTherapy : "Fez outras terapias (psicologia, fisioterapia, fonoaudiologia, acupuntura, etc)?",
+		lastTypeDidBloodExam : "A última vez que fez exames de sangue",
+		doFisicalActivities : "Pratica exercícios fisícos?",
+		fisicalActivitiesFrequency : "Com que frequencia semanal?",
+		trainingTime : "Horário em que treina", 
+		nightHoursSleeping: "Dorme quantas horas por noite?",
+		smoke : "Fuma?",
+		drink : "Ingere bebidas alcoólicas?",
+		anxietyType : "Ansiedade",
+		litersOfWaterPerDay : "Quantos litros de água pura bebe diariamente?",
+		
+		energyFoods: "Alimentos que tenho energia",
+		mostHungryTime: "Horário do dia em que mais sinto fome",
+		hungryTimeFood : "Nesse horário tenho vontade de comer",
+		notLikeFood: "Alimentos que não gosto de comer",
+		notRemovableFoods: "Alimentos que não gostaria que retirasse da minha dieta",
+		mostDificultyDietThing : "O que mais me dificulta em seguir uma dieta",
+		
+		bodyMeasure : {
+			weight: "Peso",
+			height: "Altura",
+			bendingTriceps: "PCT (Dobra de tríceps)",
+			bendingBack: "PCSE (Dobra de costas)",
+			bendingBiceps: "PCB (Dobra de bíceps)",
+			foldBelt: "PCSI (Dobra de cintura)",
+			abdominalTuck: "PCAB (Dobra de abdominal)",
+			bendingThigh: "PCC (Dobra de coxa)",
+			axillaryFold: "PCAX (Dobra de axilar)",
+			pectoralFold: "PCP (Dobra de Peitoral)",
+			leftArmContracted: "Braço Direito Contraído",
+			rightArmContracted: "Braço Esquerdo Contraído",
+			chestCircumference: "Circunferência de Tórax",
+			weistCircumference: "Circunferência de Cintura",
+			abdomenCircumference: "Circunferência de Abdômen",
+			rightThighCircumference: "Circunferência de Coxa Direita",
+			leftThighCircumference: "Circunferência de Coxa Esquerda",
+			rightCalfCircumference: "Circunferência de Panturrilha Direita",
+			leftCalfCircumference: "Circunferência de Panturrilha Esquerda",
+		},
+		
+		userProfilePanel: "Dados Pessoais",
+		clinicalDataPanel: "Dados Clinícos",
+		form : {
+			newConsultation : "Nova Consulta",
+			showSearch : "Buscar Usuário Cadastrado",
+			search : "Buscar",
+			title : "Adicionar novo Paciente",
+			loginsAreDifferent :  "A confirmação do Login não é igual ao campo de Login",
+			passwordsAreDifferent : "A Confirmação da Senha não é igual ao campo de Senha",
+			tab:{
+				searchUser : "Buscar por um Usuário existente",
+				addNewUser : "Adicionar um Novo Usuário"
+			}
+		},
+		actions : {
+			openHistory : "Mostrar Histórico"
+		},
+		placeholder : {
+			search : "Buscar Usuário",
+			name : "João da Silva",
+			email : "joao@exemplo.com",
+			diseasesInTreatment : "",
+			medicationsInUse : "",
+			lastTypeDidBloodExam : "6 meses, 1 ano, 2 anos, etc",
+			fisicalActivitiesFrequency : "1x , 2x, 3x",
+			trainingTime : "Manhã, almoço, tarde, noite, etc",
+			energyFoods : "",
+			mostHungryTime : "",
+			hungryTimeFood : "",
+			notLikeFood : "",
+			notRemovableFoods : "",
+			mostDificultyDietThing: ""
+		},
+		grid : {
+			questionRemove : "Deseja realmente remover esse Paciente?"
+		}
+	}
+});

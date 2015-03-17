@@ -1,0 +1,32 @@
+<div>
+	<div class="input-group input-line">
+		<span class="input-group-addon">${user.name}</span> <input type="text"
+			class="form-control" name="user.name"
+			placeholder="${user.placeholder.name}">
+	</div>
+
+	<div class="input-group input-line">
+		<span class="input-group-addon">${user.login}</span> <input
+			type="text" class="form-control" name="user.login"
+			placeholder="${user.placeholder.login}">
+	</div>
+	
+	<div class="input-group input-line">
+		<span class="input-group-addon">${user.password}</span> <input type="password"
+			class="form-control" name="user.password">
+	</div>
+	
+	<div class="input-group input-line">
+		<label>User Type</label>
+		<div id="userTypeContainer"></div>
+	</div>
+	
+	
+	<div class="input-group input-line">
+		<span class="input-group-addon">${user.lang}</span> 
+		<select class="form-control" name="user.lang" data-type="choice">
+ 			 <option value="pt-BR">Português (Brasil)</option>
+ 			 <option value="en-US">English (USA)</option>
+ 		</select>
+	</div>
+</div>

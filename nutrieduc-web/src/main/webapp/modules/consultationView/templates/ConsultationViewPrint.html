@@ -1,0 +1,462 @@
+<div class="row">
+	<div class="page-tab">
+		<div class="row header">
+			<div class="col-md-12" style="text-align: center; display: block">
+				<img height="100" width="auto" class="userAvatar avatar-image"
+					src="data:image/png;base64," />
+			</div>
+			<h4 data-name="patientUser.name"></h4>
+			<h3>
+				<strong>Avaliação</strong>
+			</h3>
+			<h5>
+				<strong>Nutrição Avançada</strong>
+			</h5>
+		</div>
+
+		<div class="group-info margin-top-20">
+			<img class="group-title-image"
+				src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6M0NCRDQxQzFDMzdFMTFFNDlDNzM4NTkxNTJDQkUxQkUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6M0NCRDQxQzJDMzdFMTFFNDlDNzM4NTkxNTJDQkUxQkUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDozQ0JENDFCRkMzN0UxMUU0OUM3Mzg1OTE1MkNCRTFCRSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDozQ0JENDFDMEMzN0UxMUU0OUM3Mzg1OTE1MkNCRTFCRSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PkfoU8sAAAXXSURBVHja3Fp9bFNV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" />
+			<h4 class="blueColor">INFO PESSOAL</h4>
+		</div>
+		<div class="group-lines">
+			<div class="row item margin-top-20">
+				<span class="bluecolor translate-mix item-label">${consultation.name}<span>:</span></span>
+				<div data-name="patientUser.name"></div>
+			</div>
+
+			<div class="row item">
+				<span class="bluecolor translate-mix item-label">${consultation.age}<span>:</span></span>
+				<div data-name="userInfoProfile.age"></div>
+			</div>
+
+			<div class="row item">
+				<span class="bluecolor item-label">Nascimento<span>:</span></span>
+				<div data-name="userInfoProfile.birthDate"></div>
+			</div>
+
+			<div class="row item">
+				<span class="bluecolor translate-mix item-label">${consultation.genderType}<span>:</span></span>
+				<div data-name="userInfoProfile.genderType"></div>
+			</div>
+		</div>
+
+
+		<div class="group-info margin-top-20">
+			<img class="group-title-image"
+				src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NTNCMzMyQzFDMzdFMTFFNDk3NkRCNjVCOEMwRjI5NEQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NTNCMzMyQzJDMzdFMTFFNDk3NkRCNjVCOEMwRjI5NEQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1M0IzMzJCRkMzN0UxMUU0OTc2REI2NUI4QzBGMjk0RCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1M0IzMzJDMEMzN0UxMUU0OTc2REI2NUI4QzBGMjk0RCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PnRhDssAAAZKSURBVHja3Fp9TJVV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" />
+			<h4 class="blueColor">CONTATO</h4>
+		</div>
+
+		<div class="row">
+			<div class="row item margin-top-20">
+				<span class="bluecolor item-label">Endereço<span>:</span></span> <span
+					style="display: inline; float: left"
+					data-name="userInfoProfile.addressStreet"></span> <span
+					style="display: inline; float: left">,&nbsp;</span> <span
+					style="display: inline; float: left"
+					data-name="userInfoProfile.addressNumber"></span> <span
+					style="display: inline; float: left">,&nbsp;</span> <span
+					style="display: inline; float: left"
+					data-name="userInfoProfile.addressComplement"></span>
+			</div>
+
+			<div class="row item">
+				<span class="bluecolor translate-mix item-label">${consultation.email}<span>:</span></span>
+				<div data-name="patientUser.email"></div>
+			</div>
+			<div class="row item">
+				<span class="bluecolor translate-mix item-label">${consultation.phoneNumber}<span>:</span></span>
+				<div data-name="userInfoProfile.phoneNumber"></div>
+			</div>
+		</div>
+
+		<div class="group-info margin-top-20">
+			<img class="group-title-image"
+				src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NkYwMzgwRkNDMzdFMTFFNDg3QzFFNDU5QjVGRDUzMjEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NkYwMzgwRkRDMzdFMTFFNDg3QzFFNDU5QjVGRDUzMjEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2RjAzODBGQUMzN0UxMUU0ODdDMUU0NTlCNUZENTMyMSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2RjAzODBGQkMzN0UxMUU0ODdDMUU0NTlCNUZENTMyMSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PuxLeJIAAAYXSURBVHja1Fp9TFVlGH/uvUhACK1gUxCvLQKyJdSiJc5FlnettlyztcqWmbM2hvMWuJGz/rAvHNhgsVomspz2sVmbbVm71GI5oUWm2FaCNAUUalCTD8Euwu33nPc9eO6n7zn3yOLZfi/n3PM+z/s857wfz/t7cQQCAZrLksCFw+GIz4rXtwBlKZBr+NUfUivRcN0NtFCd5894muWX79AKKwF4fakonwIWA/3At3DotKLurSgfBLKAXuAT6I7NTgBe33yULwApwH40fMbwLA9lIVAAZAJp8skIMAicAjqg02XQuRnlM8A4sBvPRq9dAF7f4yjvBBrQ0ADuWbEEeBZ4BMhWbPs88BWwD2iFrQBsLcR1OXAc9wftDUB0l+1AM4x/Jx3nYLYBRXGOwxPAW8BBGcgqXHuAN67WrdQC8PpyUG4FdsDgEO6X4fo9YIXNE8pRoAxtnEQbGbh+DajBfZ/1ALy+21Bu1N50ncePe/7Eu0JmFDuFZ64KtNWAthLll2nE/e/mAxBvfot8+07gQ2DDLE3vTcAmYFr7CkT1kb5E9ABEn+foK4Ep4HNgzSyvUYeAtYALqJW9YCw0gIQoyttln+dus9eM8068jOVL0ununDTKSr9O+61/+F/6uW+E2s4O07T6yr9G++p1nufhww7pU1VopfAvIKbKISi2yD7/rkpriS4nla/MoZdL3ZQtHQ+bOxHIOy091HCkj/xT06qBbJZjglf6DOMUG96FxCL1Ciptk7NNu8qAvSUjmb7YUETLslKVPPp1YIwe23uC/hiaUB3YxXJ24m79tr7YRQqA+/wBgHOUIypTZW5GCrVuKabMVHMT0+CYn0rq26l7aFx1il0JcM61DgHU6gE4QwZusrbCEj2h4nzyPCcd2lhk2nkW1mFdtqEgKzSfhG9J0lcx5gyVntRyG7HKVqlY3bpqCS1dcL3laYZ12YaiVEnfDkhfwwJwy8SsRCU9SEpw0kv3ueOeK9kG21KQIs034aM7OACRz/fL39arWPMU3EQ3JCfEHQDbYFuKovvWL32e+QKlWj4v5GEVS/e6021bsUzY0n1rlj7PBJCrbUa8vnzVlDg7Pcm2AEzYytZ8rPN067s/PQB9eSxUteRy2ua/WVuFRp9DVQtUrQyM+G0LwKSt/KDURf6dlH8zVK38cm7EtgBM2so0kgahXShN1crh34bM5DPR8wTYYFsmJC3SFzAtw5cuU+OP/XEHwDbYllXRA3AY2ANlefXrbvpr1PpYYF22YVJGIgWgJzODZiz9fXGS1jZ10MSk+a7EOqzLNkzKoNHn0DHQaXonfuYCrX7/GA2ZcIQzUdZhXQvSGasLdViiE+DI0upWpbfJdW7f2WbVeZ2GmfHZOcNVMt1X5+mUpJNp4bd6WiG37xoc1+palPMaq+f15Up+dSaAFslVkmTMLMlHP119VtrXHtfMpfu2WvosAxAscZbehlXrH7Sdo/ofeqOQUKQ94zpxiO5bls5sX9lSen2bZEZ6lhfHeCjDvMwUKl6cTvNcYmhNTgWovXdY6z5xUpB3AbwDegAB7AneUjLFzSwx85NE1VZbuWNhKnZaqXTRP0UXJi5r4Gv+jZ/FIdXSt3XAp5FpFa+vAuXHZjb1Rqm83001j+bF3oZ+2UW13/dY4U31Tf3TCGRX+KZeyG5iiltEWkbhpywx5bl7smypE4FWKZM+lUsfo+RCgm85rlHczMMw0WpCjvWN2lInRCokJ1RK4uxgNDYzJ7pStcZHCjqdqUUlUjcl0UUvLl9E7hsj77B6/rmkzULj/ilV55sktchpfiWuq0K50Vjk7pskmOn/NbkbOZ0WFVmJqbxpaahpFp1vkm1OSx9qop3WRN8PCD5+Dwl+3qV9SiZaTQ5sCwN2s2zLJdtujHVKo3LEtEh2pdfn3hFT8Jhgfv4bSbs7SPCnVWTPId9O4DN5yMezzUNk2yFfcCDRjlnXS9LJzDHrYZnbHL32x6zBQcQ66M6n4IPu+fLJKF056D4JnVMGnVk86A7vVswSu0nwqs2SMVPRzZUpMS/LPVpuM2v/ahDZIeM/ewSMvI1BEg07KXv/2WMuy38CDADTE7+APmZDPwAAAABJRU5ErkJggg==" />
+			<h4 class="blueColor">OBJETIVO</h4>
+		</div>
+
+		<div class="row">
+			<div class="row item margin-top-20">
+				<div data-name="consultation.objective"></div>
+			</div>
+		</div>
+
+		<div class="group-info margin-top-20">
+			<img class="group-title-image"
+				src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6ODcwOEQwMDVDMzdFMTFFNDg4Q0VGMUE4NjY5RTFGMzQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6ODcwOEQwMDZDMzdFMTFFNDg4Q0VGMUE4NjY5RTFGMzQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4NzA4RDAwM0MzN0UxMUU0ODhDRUYxQTg2NjlFMUYzNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4NzA4RDAwNEMzN0UxMUU0ODhDRUYxQTg2NjlFMUYzNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PmRKUokAAAUvSURBVHja1FpbaFRHGP43WYOKLliyxSbGC2wbq9KkUl/UStrqIqbUB0VsK4ZaWiHeFlIhqPVBraTUQKySByVExNYU7IMPlnZVCCnJQ5V6QdS0AWsuq5CgkASRxOz6zZn/pLN7ztk9e/bi7sA3e87Ozpn/m5nzz8z3rysSiVA+J7fIXC5Xak8JBGcjrwJ8yrdjMb8qUq57gHZq8j9OpVnR+S4tc0IgEJyB/FNgLhACrsCgf23WfRP5aqAE6AXOo+5odggEgjORfw1MB86h4QdK2VvIK4CFgBfwcMkwMAjcB26hzj9KnQXItwDPgFMoG8kcgUBwI/J3gZNo6BHuRcXlwFagGii12fYAcAk4C3ThWRE86w1c7wRu4P5CegnI6XIAuIyHX2XDBZl9QGWK7+FN4ChwgYl8iGs/cCTRtLJHIBAsQ74XOIQHDuH+HVw3AyvS7FA6gVq0cRttFOP6IPAD7vucEwgE30b+pdbTTf4x3IshbozxKOlMwnPVoa2TaKuIR6YF9/eSJyB7fg/3fgFwGvgiS+69FfgKCGujQHTcbCSsCcg5L9h/A0wAvwLrs7xGXQQ2AIXAMZ4Fo7EECiwqH+A5P8Y9n23jids8zTYcYpsMyTgC0lUOoWI7z/kTybS6dI6Hdq8qMy37saOP/u4fTpbILn4nxEpfrLpYYbvbZJFaih/tY2/TmGxrnyzxUs2yEtOy/548d0KgEbZ0cIceBf5QF7vYKbRd63Hp55sz6G2SSUWaLdKmE2wjGQnIF3eatsISbcqAn08lrdBskrZNZVsNI7BZ29tIpvU5uHOuZ9t+YlsNBObxxmx5GrYHmUiVmm3SxnnRBOR+PsTf1eTw+WUrf4bY5skRqNL28zKtS+mNK3Q5KrOZqvnzMts86UZ9GJo2sCpPtCV+r8xD9R8tILeFMR/4ZlnW3bGyjBbNnmFa9mIiQg1XH9D1vrhutlSzscnfjc/NKgH9YFyRqAs+XuylDRWvO+o+z1Q3rV/itSy/83g0EQHdxm7d5th1YGEenOPLzdaBcf4szgMCXlU0KIiZQp48IOAxX4nzNOkEXIp6EDeNT4QzZozNZw8bhC1l0zaYqHZzZz89fPqc3AXmbnTPqrlUWTrT/PQ+MELHO3rN3Wg4QpfuDtkhMKjaHOtGuxPVfvpsnM5df2RZPv+1aZYELt4ZpDN/hVIdqO54U+hWHkz7m6rNOoEeTe4TK5wUnXI1DWiqXiDoI6mvThJoJ6lVEitmuZp029awzUxAqsT6OfBsDhPQbSvRlW11HehlobVLmWe5Nve72MaHZgvZeRIqsdAniRoy4ctTXEMa2LbPgTZzWSUQrEP+MyCG508n5+JZ06dQ9aJiwzqh+3nhhh0koZu+D4hDzGcg0mguqwh9Xpw9m/z7QaYW19eSVSYSrRMOkti01bJyvTN2dkTvhaTeckOTuIVKLITWV5/qWLGuIhk7GIm/mZPKl1+TuIUiJoXWV5VaWZUT2/y1ZoGPeOLudySV6VwQd4VCvd++uCt/KBRhoVCH+UGtWe152WaYbThmFa2xPg9IPb6F2RfifhsJodUYPk33C7uL29J7viVelMZOiGkOT6XDWQ4xfUsyxNRvVcFJkO93VolFhU0kJch0BPm+B35hV1mlvbBpC/JFE7EKs9awIJZMmPU33tt0Zj7MGk0iXqC7nKID3frJZoT+D3TfRp37Sp0sBrqN00qoY0JoDZGMIffYrOvjLXEJb8zasvdXA3OD1D97RFTdRklFykkqvX/2yOf0UoABAM1zLeiI5nc5AAAAAElFTkSuQmCC" />
+			<h4 class="blueColor">DADOS CLÍNICOS</h4>
+		</div>
+
+		<div class="row">
+			<div class="row item-break margin-top-20">
+				<span class="bluecolor translate-mix item-label">${consultation.diseasesInTreatment}<span>:</span></span>
+				<div data-name="clinicalData.diseasesInTreatment"></div>
+			</div>
+			<div class="row item-break">
+				<span class="bluecolor translate-mix item-label">${consultation.medicationsInUse}<span>:</span></span>
+				<div data-name="clinicalData.medicationsInUse"></div>
+			</div>
+
+			<div class="row item-break">
+				<span class="bluecolor item-label">Já fez cirurgia no
+					aparelho <br />digestivo<span>:</span>
+				</span>
+				<div data-name="clinicalData.didStomachSurgery"></div>
+			</div>
+
+			<div class="row item-break">
+				<span class="bluecolor translate-mix item-label">${consultation.intestineFrequencyType}<span>:</span></span>
+				<div data-name="clinicalData.intestineFrequencyType"></div>
+			</div>
+		</div>
+	</div>
+	<div class="page-tab">
+		<div class="group-info">
+			<img class="group-title-image"
+				src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6ODcwOEQwMDVDMzdFMTFFNDg4Q0VGMUE4NjY5RTFGMzQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6ODcwOEQwMDZDMzdFMTFFNDg4Q0VGMUE4NjY5RTFGMzQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4NzA4RDAwM0MzN0UxMUU0ODhDRUYxQTg2NjlFMUYzNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4NzA4RDAwNEMzN0UxMUU0ODhDRUYxQTg2NjlFMUYzNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PmRKUokAAAUvSURBVHja1FpbaFRHGP43WYOKLliyxSbGC2wbq9KkUl/UStrqIqbUB0VsK4ZaWiHeFlIhqPVBraTUQKySByVExNYU7IMPlnZVCCnJQ5V6QdS0AWsuq5CgkASRxOz6zZn/pLN7ztk9e/bi7sA3e87Ozpn/m5nzz8z3rysSiVA+J7fIXC5Xak8JBGcjrwJ8yrdjMb8qUq57gHZq8j9OpVnR+S4tc0IgEJyB/FNgLhACrsCgf23WfRP5aqAE6AXOo+5odggEgjORfw1MB86h4QdK2VvIK4CFgBfwcMkwMAjcB26hzj9KnQXItwDPgFMoG8kcgUBwI/J3gZNo6BHuRcXlwFagGii12fYAcAk4C3ThWRE86w1c7wRu4P5CegnI6XIAuIyHX2XDBZl9QGWK7+FN4ChwgYl8iGs/cCTRtLJHIBAsQ74XOIQHDuH+HVw3AyvS7FA6gVq0cRttFOP6IPAD7vucEwgE30b+pdbTTf4x3IshbozxKOlMwnPVoa2TaKuIR6YF9/eSJyB7fg/3fgFwGvgiS+69FfgKCGujQHTcbCSsCcg5L9h/A0wAvwLrs7xGXQQ2AIXAMZ4Fo7EECiwqH+A5P8Y9n23jids8zTYcYpsMyTgC0lUOoWI7z/kTybS6dI6Hdq8qMy37saOP/u4fTpbILn4nxEpfrLpYYbvbZJFaih/tY2/TmGxrnyzxUs2yEtOy/548d0KgEbZ0cIceBf5QF7vYKbRd63Hp55sz6G2SSUWaLdKmE2wjGQnIF3eatsISbcqAn08lrdBskrZNZVsNI7BZ29tIpvU5uHOuZ9t+YlsNBObxxmx5GrYHmUiVmm3SxnnRBOR+PsTf1eTw+WUrf4bY5skRqNL28zKtS+mNK3Q5KrOZqvnzMts86UZ9GJo2sCpPtCV+r8xD9R8tILeFMR/4ZlnW3bGyjBbNnmFa9mIiQg1XH9D1vrhutlSzscnfjc/NKgH9YFyRqAs+XuylDRWvO+o+z1Q3rV/itSy/83g0EQHdxm7d5th1YGEenOPLzdaBcf4szgMCXlU0KIiZQp48IOAxX4nzNOkEXIp6EDeNT4QzZozNZw8bhC1l0zaYqHZzZz89fPqc3AXmbnTPqrlUWTrT/PQ+MELHO3rN3Wg4QpfuDtkhMKjaHOtGuxPVfvpsnM5df2RZPv+1aZYELt4ZpDN/hVIdqO54U+hWHkz7m6rNOoEeTe4TK5wUnXI1DWiqXiDoI6mvThJoJ6lVEitmuZp029awzUxAqsT6OfBsDhPQbSvRlW11HehlobVLmWe5Nve72MaHZgvZeRIqsdAniRoy4ctTXEMa2LbPgTZzWSUQrEP+MyCG508n5+JZ06dQ9aJiwzqh+3nhhh0koZu+D4hDzGcg0mguqwh9Xpw9m/z7QaYW19eSVSYSrRMOkti01bJyvTN2dkTvhaTeckOTuIVKLITWV5/qWLGuIhk7GIm/mZPKl1+TuIUiJoXWV5VaWZUT2/y1ZoGPeOLudySV6VwQd4VCvd++uCt/KBRhoVCH+UGtWe152WaYbThmFa2xPg9IPb6F2RfifhsJodUYPk33C7uL29J7viVelMZOiGkOT6XDWQ4xfUsyxNRvVcFJkO93VolFhU0kJch0BPm+B35hV1mlvbBpC/JFE7EKs9awIJZMmPU33tt0Zj7MGk0iXqC7nKID3frJZoT+D3TfRp37Sp0sBrqN00qoY0JoDZGMIffYrOvjLXEJb8zasvdXA3OD1D97RFTdRklFykkqvX/2yOf0UoABAM1zLeiI5nc5AAAAAElFTkSuQmCC" />
+			<h4 class="blueColor">DADOS CLÍNICOS</h4>
+		</div>
+
+		<div class="row">
+			<div class="row item-break">
+				<span class="bluecolor translate-mix item-label">${consultation.bloodType}<span>:</span></span>
+				<div data-name="clinicalData.bloodType"></div>
+			</div>
+
+			<div class="row item-break">
+				<span class="bluecolor item-label">A última vez em que fez
+					exame de Sangue<span>:</span>
+				</span>
+				<div data-name="clinicalData.lastTypeDidBloodExam"></div>
+			</div>
+		</div>
+
+		<div class="group-info margin-top-20">
+			<img class="group-title-image"
+				src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QjZBMDM3MzFDMzdFMTFFNEE5RUVDOUZBMUREMUFGNTYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QjZBMDM3MzJDMzdFMTFFNEE5RUVDOUZBMUREMUFGNTYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpCNkEwMzcyRkMzN0UxMUU0QTlFRUM5RkExREQxQUY1NiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpCNkEwMzczMEMzN0UxMUU0QTlFRUM5RkExREQxQUY1NiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PnzTRaYAAAaiSURBVHja1FppbFRV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" />
+			<h4 class="blueColor">HÁBITOS DE VIDA</h4>
+		</div>
+
+		<div class="row">
+			<div class="row item-break margin-top-20">
+				<span class="bluecolor translate-mix item-label">${consultation.doFisicalActivities}<span>:</span></span>
+				<div data-name="lifeHabit.doFisicalActivities"></div>
+			</div>
+
+			<div class="row item-break">
+				<span class="bluecolor translate-mix item-label">${consultation.fisicalActivitiesFrequency}<span>:</span></span>
+				<div data-name="lifeHabit.fisicalActivitiesFrequency"></div>
+			</div>
+
+			<div class="row item-break">
+				<span class="bluecolor translate-mix item-label">${consultation.trainingTime}<span>:</span></span>
+				<div data-name="lifeHabit.trainingTime"></div>
+			</div>
+
+			<div class="row item-break">
+				<span class="bluecolor translate-mix item-label">${consultation.nightHoursSleeping}<span>:</span></span>
+				<div data-name="lifeHabit.nightHoursSleeping"></div>
+			</div>
+
+			<div class="row item-break">
+				<span class="bluecolor translate-mix item-label">${consultation.smoke}<span>:</span></span>
+				<div data-name="lifeHabit.smoke"></div>
+			</div>
+
+			<div class="row item-break">
+				<span class="bluecolor translate-mix item-label">${consultation.drink}<span>:</span></span>
+				<div data-name="lifeHabit.drink"></div>
+			</div>
+
+			<div class="row item-break">
+				<span class="bluecolor item-label">Bebe quantos litros de
+					água por dia<span>:</span>
+				</span>
+				<div data-name="lifeHabit.litersOfWaterPerDay"></div>
+			</div>
+
+			<div class="row item-break">
+				<span class="bluecolor translate-mix item-label">${consultation.anxietyType}<span>:</span></span>
+				<div data-name="lifeHabit.anxietyType"></div>
+			</div>
+		</div>
+
+		<div class="group-info margin-top-20">
+			<img class="group-title-image"
+				src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RTIyNzVBOUZDMzdEMTFFNDgwMTJDRDBDOEVCQUYzMDMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RTIyNzVBQTBDMzdEMTFFNDgwMTJDRDBDOEVCQUYzMDMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpFMjI3NUE5REMzN0QxMUU0ODAxMkNEMEM4RUJBRjMwMyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpFMjI3NUE5RUMzN0QxMUU0ODAxMkNEMEM4RUJBRjMwMyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PrApmjYAAAXKSURBVHja1Fp9TJVVGH+4EEoijAT5SqzE+Ii8SFuZrMlaXhvUrCyz6TRg6cZs3S3bqMw2K2cTJoVzDYcsZ2nNWm3F2MUaW4Na/qGwObnBikhuFsTkQ0wY3H7nnOfe3vv9wb13l7P9zvu+933POb/nfL3P+3tujNVqpYWc4kQWExMzv1qMpgzkZUCu5tdpp6fiNef9QAc1GK7Np1nR+TEyC8YAoykR+QtADmABzoNQn59lVyN/DMgCBoEzKDsZGQOMpqXIdwO3A6fR8G+ae/ci1wP5QBqQxHfGgWGgF+hGmV80Ze5GvgOYAppwbyJ8BhhNzyJfCxxDQ3/iWhRcD+wEKoBsP9seAr4FTgFdqMuKujJxvhe4iOtzoTVATZf9QDsq/46JC2PeAIrnuQ4vAYeAc2zIozg3AO/6mlb+GWA0rUD+GnAQFY7geg3OjwOlId5QOoEatNGDNlJxfgA4gus/gjfAaCpAXi17usEwjWsxxPVOO0ook9i5XkVbx9BWPI9MM66vBG6A6vlXuPd1wAmgMkLbewvwEjAnR4HoA3cj4dkANeeF9fuAWeALYHOE31FfA1uAWKCOZ8GkswE6D4X385yf5p6PNHniNk8wh4PMySXpPGyVbbxg93qbNoa8ZbQpfxktitORt2dyUhbL81hdDG1/INP+/PLEeNpclObNiErJQXARnBQ3Lwaol1QJCnTwblPvrfbW3WupbU8JDRx4hJ68zz2RpucLqfLBLHlekL6ETu8ooodWJsvrbSUZ9GWV3tdI1EsugpPgpjh6HIE9QCPv88d97TaiRz/quko9lgn6qlpP5QWpbp+zrbE4nTryQR51vl+i8ZKL4tTIHN0YoBZugnzDEm31d583/32Dypsu0g+/Xpe9HR+rC8d6KJWcFLfFzNVlBLZJ30ZZWhtI7bNzVnr9mz7KTl5E5YWp4VrUtcztE+bqYsBKdszWB+Me/DgwRkNjt6gsNyVcBhRLborjSkcDlD9v4d92BdvCz4NjVJSRGM6tdScfLczZPgJl0p9XqTzY2kcmZ+iOJbeF04AKPrYzZ7sBufJjxGjKC8AldklTM7OUkhAXTgOyJccGQ7/t689mgO3DWD/fFrx5tgOjN6n1ygj1DU/Npwm9lrNzd+WHo9vW4cVl3JCD98UkVWDLffiuZHquOJ02rApqwee5fNQjzfAx5Hvg0PV/pbsh0I0XXvGRn+hQxWr7biVGJcCUphUN4pymUFIwJO/PTKTqddlue7T0wwvy2PB0np20mGUfX7DQi59eDqa5JO/OXBBpiz6dakpXSGLnzf9EXhcSnaJRD4JKlvFbcnpEII27GwGb0za8AMS4YS1n523UvAAMMLsbAdsU6l4ABlzSctbZtUoh9zUYzCw6RWsakqqe0ZRLSl+1G9DBWiWxYhatycZtI3NmA5RKnMU3T0WxATZuWTZlW/seGGShtUszz6Jt7ncxx9/dvcjOkFCJhT5JdDgKDTjM3LYDZ10NUKLRFKvEn5PSKqMldUpOittNrcDl7Eo0kZC4laU15BplcUhzVisdfSqP3t50j08GIpKlz1pK1qMbA/VCp0mJvlZS8nuTg/vuIi0q8WgUBb5nYavRU83PrFluF616/7pBbb2e/aBVqQn0RGEa2ZpqN4/S5Wt+BWVeZrG3THrLmtiBN21UrIE6VudOUuREXefUAg5VLLfvw3mt46h6F3ffI6VMR4O4KxTqN/0Xd9WDQhEWCvUcV9QS0Z5Xbc4xhzpP0RrP3wNKj29m62PlUIr56GNhzzNN85yv0vR8s7cojT8hpjt5Kr0T4RDTW6RCTFc972yBB/naWLkWBbaSkiBDEeR7H/iMg3xit3mcQhbkczTEU5h1FwtigYRZW9m36Qx/mNXRCG+B7jxyDHTbtPwJ+j/Q3YMyvZoyEQx0u04roRILodVCKobc72fZXHaJs9gxOxu5vxq4J6T9s4dVq9toUrzmSyq0f/ZYyOk/AQYAxOFJoFBUxEAAAAAASUVORK5CYII=" />
+			<h4 class="blueColor">HÁBITOS ALIMENTARES</h4>
+		</div>
+
+		<div class="row">
+			<div class="row item-break margin-top-20">
+				<span class="bluecolor translate-mix item-label">${consultation.energyFoods}<span>:</span></span>
+				<div data-name="eatingHabit.energyFoods"></div>
+			</div>
+
+			<div class="row item-break">
+				<span class="bluecolor item-label">Horário do dia em que mais
+					sinto fome:<span>:</span>
+				</span>
+				<div data-name="eatingHabit.mostHungryTime"></div>
+			</div>
+
+			<div class="row item-break">
+				<span class="bluecolor item-label">Nesse horário tenho
+					vontade de comer:<span>:</span>
+				</span>
+				<div data-name="eatingHabit.hungryTimeFood"></div>
+			</div>
+
+			<div class="row item-break">
+				<span class="bluecolor item-label">Alimentos que não gosto de
+					comer<span>:</span>
+				</span>
+				<div data-name="eatingHabit.notLikeFood"></div>
+			</div>
+
+			<div class="row item-break">
+				<span class="bluecolor item-label">Alimentos que não gostaria
+					que <br />retirasse da minha dieta<span>:</span>
+				</span>
+				<div data-name="eatingHabit.notRemovableFoods"></div>
+			</div>
+
+			<div class="row item-break">
+				<span class="bluecolor item-label">O que mais me dificulta em
+					seguir uma dieta<span>:</span>
+				</span>
+				<div data-name="eatingHabit.mostDificultyDietThing"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="page-break"></div>
+
+<div class="row">
+	<div class="page-tab">
+		<div class="row header">
+			<div class="col-md-12" style="text-align: center; display: block">
+				<img height="100" width="auto" class="userAvatar avatar-image"
+					src="data:image/png;base64," />
+			</div>
+			<h4 data-name="patientUser.name"></h4>
+			<h3>
+				<strong>Avaliação</strong>
+			</h3>
+			<h5>
+				<strong>Nutrição Avançada</strong>
+			</h5>
+		</div>
+
+		<div class="group-info margin-top-20">
+			<img class="group-title-image"
+				src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6M0NCRDQxQzFDMzdFMTFFNDlDNzM4NTkxNTJDQkUxQkUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6M0NCRDQxQzJDMzdFMTFFNDlDNzM4NTkxNTJDQkUxQkUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDozQ0JENDFCRkMzN0UxMUU0OUM3Mzg1OTE1MkNCRTFCRSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDozQ0JENDFDMEMzN0UxMUU0OUM3Mzg1OTE1MkNCRTFCRSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PkfoU8sAAAXXSURBVHja3Fp9bFNV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" />
+			<h4 class="blueColor">INFO PESSOAL</h4>
+		</div>
+		<div class="group-lines">
+			<div class="row item margin-top-20">
+				<span class="bluecolor translate-mix item-label">${consultation.name}<span>:</span></span>
+				<div data-name="patientUser.name"></div>
+			</div>
+
+			<div class="row item">
+				<span class="bluecolor translate-mix item-label">${consultation.age}<span>:</span></span>
+				<div data-name="userInfoProfile.age"></div>
+			</div>
+
+			<div class="row item">
+				<span class="bluecolor item-label">Nascimento<span>:</span></span>
+				<div data-name="userInfoProfile.birthDate"></div>
+			</div>
+
+			<div class="row item">
+				<span class="bluecolor translate-mix item-label">${consultation.genderType}<span>:</span></span>
+				<div data-name="userInfoProfile.genderType"></div>
+			</div>
+		</div>
+
+
+		<div class="group-info margin-top-20">
+			<img class="group-title-image"
+				src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NTNCMzMyQzFDMzdFMTFFNDk3NkRCNjVCOEMwRjI5NEQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NTNCMzMyQzJDMzdFMTFFNDk3NkRCNjVCOEMwRjI5NEQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1M0IzMzJCRkMzN0UxMUU0OTc2REI2NUI4QzBGMjk0RCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1M0IzMzJDMEMzN0UxMUU0OTc2REI2NUI4QzBGMjk0RCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PnRhDssAAAZKSURBVHja3Fp9TJVV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" />
+			<h4 class="blueColor">CONTATO</h4>
+		</div>
+
+		<div class="row">
+			<div class="row item margin-top-20">
+				<span class="bluecolor item-label">Endereço<span>:</span></span> <span
+					style="display: inline; float: left"
+					data-name="userInfoProfile.addressStreet"></span> <span
+					style="display: inline; float: left">,&nbsp;</span> <span
+					style="display: inline; float: left"
+					data-name="userInfoProfile.addressNumber"></span> <span
+					style="display: inline; float: left">,&nbsp;</span> <span
+					style="display: inline; float: left"
+					data-name="userInfoProfile.addressComplement"></span>
+			</div>
+
+			<div class="row item">
+				<span class="bluecolor translate-mix item-label">${consultation.email}<span>:</span></span>
+				<div data-name="patientUser.email"></div>
+			</div>
+			<div class="row item">
+				<span class="bluecolor translate-mix item-label">${consultation.phoneNumber}<span>:</span></span>
+				<div data-name="userInfoProfile.phoneNumber"></div>
+			</div>
+		</div>
+
+		<div class="group-info">
+			<img class="group-title-image"
+				src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6ODcwOEQwMDVDMzdFMTFFNDg4Q0VGMUE4NjY5RTFGMzQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6ODcwOEQwMDZDMzdFMTFFNDg4Q0VGMUE4NjY5RTFGMzQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4NzA4RDAwM0MzN0UxMUU0ODhDRUYxQTg2NjlFMUYzNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4NzA4RDAwNEMzN0UxMUU0ODhDRUYxQTg2NjlFMUYzNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PmRKUokAAAUvSURBVHja1FpbaFRHGP43WYOKLliyxSbGC2wbq9KkUl/UStrqIqbUB0VsK4ZaWiHeFlIhqPVBraTUQKySByVExNYU7IMPlnZVCCnJQ5V6QdS0AWsuq5CgkASRxOz6zZn/pLN7ztk9e/bi7sA3e87Ozpn/m5nzz8z3rysSiVA+J7fIXC5Xak8JBGcjrwJ8yrdjMb8qUq57gHZq8j9OpVnR+S4tc0IgEJyB/FNgLhACrsCgf23WfRP5aqAE6AXOo+5odggEgjORfw1MB86h4QdK2VvIK4CFgBfwcMkwMAjcB26hzj9KnQXItwDPgFMoG8kcgUBwI/J3gZNo6BHuRcXlwFagGii12fYAcAk4C3ThWRE86w1c7wRu4P5CegnI6XIAuIyHX2XDBZl9QGWK7+FN4ChwgYl8iGs/cCTRtLJHIBAsQ74XOIQHDuH+HVw3AyvS7FA6gVq0cRttFOP6IPAD7vucEwgE30b+pdbTTf4x3IshbozxKOlMwnPVoa2TaKuIR6YF9/eSJyB7fg/3fgFwGvgiS+69FfgKCGujQHTcbCSsCcg5L9h/A0wAvwLrs7xGXQQ2AIXAMZ4Fo7EECiwqH+A5P8Y9n23jids8zTYcYpsMyTgC0lUOoWI7z/kTybS6dI6Hdq8qMy37saOP/u4fTpbILn4nxEpfrLpYYbvbZJFaih/tY2/TmGxrnyzxUs2yEtOy/548d0KgEbZ0cIceBf5QF7vYKbRd63Hp55sz6G2SSUWaLdKmE2wjGQnIF3eatsISbcqAn08lrdBskrZNZVsNI7BZ29tIpvU5uHOuZ9t+YlsNBObxxmx5GrYHmUiVmm3SxnnRBOR+PsTf1eTw+WUrf4bY5skRqNL28zKtS+mNK3Q5KrOZqvnzMts86UZ9GJo2sCpPtCV+r8xD9R8tILeFMR/4ZlnW3bGyjBbNnmFa9mIiQg1XH9D1vrhutlSzscnfjc/NKgH9YFyRqAs+XuylDRWvO+o+z1Q3rV/itSy/83g0EQHdxm7d5th1YGEenOPLzdaBcf4szgMCXlU0KIiZQp48IOAxX4nzNOkEXIp6EDeNT4QzZozNZw8bhC1l0zaYqHZzZz89fPqc3AXmbnTPqrlUWTrT/PQ+MELHO3rN3Wg4QpfuDtkhMKjaHOtGuxPVfvpsnM5df2RZPv+1aZYELt4ZpDN/hVIdqO54U+hWHkz7m6rNOoEeTe4TK5wUnXI1DWiqXiDoI6mvThJoJ6lVEitmuZp029awzUxAqsT6OfBsDhPQbSvRlW11HehlobVLmWe5Nve72MaHZgvZeRIqsdAniRoy4ctTXEMa2LbPgTZzWSUQrEP+MyCG508n5+JZ06dQ9aJiwzqh+3nhhh0koZu+D4hDzGcg0mguqwh9Xpw9m/z7QaYW19eSVSYSrRMOkti01bJyvTN2dkTvhaTeckOTuIVKLITWV5/qWLGuIhk7GIm/mZPKl1+TuIUiJoXWV5VaWZUT2/y1ZoGPeOLudySV6VwQd4VCvd++uCt/KBRhoVCH+UGtWe152WaYbThmFa2xPg9IPb6F2RfifhsJodUYPk33C7uL29J7viVelMZOiGkOT6XDWQ4xfUsyxNRvVcFJkO93VolFhU0kJch0BPm+B35hV1mlvbBpC/JFE7EKs9awIJZMmPU33tt0Zj7MGk0iXqC7nKID3frJZoT+D3TfRp37Sp0sBrqN00qoY0JoDZGMIffYrOvjLXEJb8zasvdXA3OD1D97RFTdRklFykkqvX/2yOf0UoABAM1zLeiI5nc5AAAAAElFTkSuQmCC" />
+			<h4 class="blueColor">MEDIDAS</h4>
+		</div>
+
+		<div class="row">
+			<div class="row item-break margin-top-20">
+				<span class="bluecolor translate-mix item-label">${consultation.bodyMeasure.weight}<span>:</span></span>
+				<div data-name="bodyMeasure.weight"></div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="row item-break margin-top-20">
+				<span class="bluecolor translate-mix item-label">${consultation.bodyMeasure.height}<span>:</span></span>
+				<div data-name="bodyMeasure.height"></div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="row item-break margin-top-20">
+				<span class="bluecolor translate-mix item-label">${consultation.bodyMeasure.bendingTriceps}<span>:</span></span>
+				<div data-name="bodyMeasure.bendingTriceps"></div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="row item-break margin-top-20">
+				<span class="bluecolor translate-mix item-label">${consultation.bodyMeasure.bendingBack}<span>:</span></span>
+				<div data-name="bodyMeasure.bendingBack"></div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="row item-break margin-top-20">
+				<span class="bluecolor translate-mix item-label">${consultation.bodyMeasure.bendingBiceps}<span>:</span></span>
+				<div data-name="bodyMeasure.bendingBack"></div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="row item-break margin-top-20">
+				<span class="bluecolor translate-mix item-label">${consultation.bodyMeasure.foldBelt}<span>:</span></span>
+				<div data-name="bodyMeasure.foldBelt"></div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="row item-break margin-top-20">
+				<span class="bluecolor translate-mix item-label">${consultation.bodyMeasure.abdominalTuck}<span>:</span></span>
+				<div data-name="bodyMeasure.abdominalTuck"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="page-tab">
+
+		<div class="group-info">
+			<img class="group-title-image"
+				src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6ODcwOEQwMDVDMzdFMTFFNDg4Q0VGMUE4NjY5RTFGMzQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6ODcwOEQwMDZDMzdFMTFFNDg4Q0VGMUE4NjY5RTFGMzQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4NzA4RDAwM0MzN0UxMUU0ODhDRUYxQTg2NjlFMUYzNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4NzA4RDAwNEMzN0UxMUU0ODhDRUYxQTg2NjlFMUYzNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PmRKUokAAAUvSURBVHja1FpbaFRHGP43WYOKLliyxSbGC2wbq9KkUl/UStrqIqbUB0VsK4ZaWiHeFlIhqPVBraTUQKySByVExNYU7IMPlnZVCCnJQ5V6QdS0AWsuq5CgkASRxOz6zZn/pLN7ztk9e/bi7sA3e87Ozpn/m5nzz8z3rysSiVA+J7fIXC5Xak8JBGcjrwJ8yrdjMb8qUq57gHZq8j9OpVnR+S4tc0IgEJyB/FNgLhACrsCgf23WfRP5aqAE6AXOo+5odggEgjORfw1MB86h4QdK2VvIK4CFgBfwcMkwMAjcB26hzj9KnQXItwDPgFMoG8kcgUBwI/J3gZNo6BHuRcXlwFagGii12fYAcAk4C3ThWRE86w1c7wRu4P5CegnI6XIAuIyHX2XDBZl9QGWK7+FN4ChwgYl8iGs/cCTRtLJHIBAsQ74XOIQHDuH+HVw3AyvS7FA6gVq0cRttFOP6IPAD7vucEwgE30b+pdbTTf4x3IshbozxKOlMwnPVoa2TaKuIR6YF9/eSJyB7fg/3fgFwGvgiS+69FfgKCGujQHTcbCSsCcg5L9h/A0wAvwLrs7xGXQQ2AIXAMZ4Fo7EECiwqH+A5P8Y9n23jids8zTYcYpsMyTgC0lUOoWI7z/kTybS6dI6Hdq8qMy37saOP/u4fTpbILn4nxEpfrLpYYbvbZJFaih/tY2/TmGxrnyzxUs2yEtOy/548d0KgEbZ0cIceBf5QF7vYKbRd63Hp55sz6G2SSUWaLdKmE2wjGQnIF3eatsISbcqAn08lrdBskrZNZVsNI7BZ29tIpvU5uHOuZ9t+YlsNBObxxmx5GrYHmUiVmm3SxnnRBOR+PsTf1eTw+WUrf4bY5skRqNL28zKtS+mNK3Q5KrOZqvnzMts86UZ9GJo2sCpPtCV+r8xD9R8tILeFMR/4ZlnW3bGyjBbNnmFa9mIiQg1XH9D1vrhutlSzscnfjc/NKgH9YFyRqAs+XuylDRWvO+o+z1Q3rV/itSy/83g0EQHdxm7d5th1YGEenOPLzdaBcf4szgMCXlU0KIiZQp48IOAxX4nzNOkEXIp6EDeNT4QzZozNZw8bhC1l0zaYqHZzZz89fPqc3AXmbnTPqrlUWTrT/PQ+MELHO3rN3Wg4QpfuDtkhMKjaHOtGuxPVfvpsnM5df2RZPv+1aZYELt4ZpDN/hVIdqO54U+hWHkz7m6rNOoEeTe4TK5wUnXI1DWiqXiDoI6mvThJoJ6lVEitmuZp029awzUxAqsT6OfBsDhPQbSvRlW11HehlobVLmWe5Nve72MaHZgvZeRIqsdAniRoy4ctTXEMa2LbPgTZzWSUQrEP+MyCG508n5+JZ06dQ9aJiwzqh+3nhhh0koZu+D4hDzGcg0mguqwh9Xpw9m/z7QaYW19eSVSYSrRMOkti01bJyvTN2dkTvhaTeckOTuIVKLITWV5/qWLGuIhk7GIm/mZPKl1+TuIUiJoXWV5VaWZUT2/y1ZoGPeOLudySV6VwQd4VCvd++uCt/KBRhoVCH+UGtWe152WaYbThmFa2xPg9IPb6F2RfifhsJodUYPk33C7uL29J7viVelMZOiGkOT6XDWQ4xfUsyxNRvVcFJkO93VolFhU0kJch0BPm+B35hV1mlvbBpC/JFE7EKs9awIJZMmPU33tt0Zj7MGk0iXqC7nKID3frJZoT+D3TfRp37Sp0sBrqN00qoY0JoDZGMIffYrOvjLXEJb8zasvdXA3OD1D97RFTdRklFykkqvX/2yOf0UoABAM1zLeiI5nc5AAAAAElFTkSuQmCC" />
+			<h4 class="blueColor">MEDIDAS</h4>
+		</div>
+
+		<div class="row">
+			<div class="row item-break margin-top-20">
+				<span class="bluecolor translate-mix item-label">${consultation.bodyMeasure.bendingThigh}<span>:</span></span>
+				<div data-name="bodyMeasure.bendingThigh"></div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="row item-break margin-top-20">
+				<span class="bluecolor translate-mix item-label">${consultation.bodyMeasure.axillaryFold}<span>:</span></span>
+				<div data-name="bodyMeasure.axillaryFold"></div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="row item-break margin-top-20">
+				<span class="bluecolor translate-mix item-label">${consultation.bodyMeasure.pectoralFold}<span>:</span></span>
+				<div data-name="bodyMeasure.pectoralFold"></div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="row item-break margin-top-20">
+				<span class="bluecolor translate-mix item-label">${consultation.bodyMeasure.leftArmContracted}<span>:</span></span>
+				<div data-name="bodyMeasure.leftArmContracted"></div>
+			</div>
+		</div>
+	
+		<div class="row">
+			<div class="row item-break margin-top-20">
+				<span class="bluecolor translate-mix item-label">${consultation.bodyMeasure.rightArmContracted}<span>:</span></span>
+				<div data-name="bodyMeasure.rightArmContracted"></div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="row item-break margin-top-20">
+				<span class="bluecolor translate-mix item-label">${consultation.bodyMeasure.chestCircumference}<span>:</span></span>
+				<div data-name="bodyMeasure.rightArmContracted"></div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="row item-break margin-top-20">
+				<span class="bluecolor translate-mix item-label">${consultation.bodyMeasure.weistCircumference}<span>:</span></span>
+				<div data-name="bodyMeasure.weistCircumference"></div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="row item-break margin-top-20">
+				<span class="bluecolor translate-mix item-label">${consultation.bodyMeasure.abdomenCircumference}<span>:</span></span>
+				<div data-name="bodyMeasure.abdomenCircumference"></div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="row item-break margin-top-20">
+				<span class="bluecolor translate-mix item-label">${consultation.bodyMeasure.rightThighCircumference}<span>:</span></span>
+				<div data-name="bodyMeasure.rightThighCircumference"></div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="row item-break margin-top-20">
+				<span class="bluecolor translate-mix item-label">${consultation.bodyMeasure.leftThighCircumference}<span>:</span></span>
+				<div data-name="bodyMeasure.leftThighCircumference"></div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="row item-break margin-top-20">
+				<span class="bluecolor translate-mix item-label">${consultation.bodyMeasure.rightCalfCircumference}<span>:</span></span>
+				<div data-name="bodyMeasure.leftThighCircumference"></div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="row item-break margin-top-20">
+				<span class="bluecolor translate-mix item-label">${consultation.bodyMeasure.leftCalfCircumference}<span>:</span></span>
+				<div data-name="bodyMeasure.leftCalfCircumference"></div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+

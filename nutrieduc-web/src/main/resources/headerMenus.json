@@ -1,0 +1,74 @@
+{ 
+"menus" : 
+[
+	{
+		"menuLabel" : "consultation",
+		"moduleId" : "consultationClinic",
+		"type" : "menuItem",
+		"userTypes" : [
+			"NUTRITIONIST",
+			"EMPLOYEE"
+		]
+	},
+	
+	{
+		"menuLabel" : "consultationNutritionist",
+		"type" : "group",
+		"userTypes" : [
+			"NUTRITIONIST"
+		],
+		"subMenus" : [
+			{
+				"menuLabel" : "consultationDayPool",
+				"moduleId" : "consultationDayPool",
+				"type" : "menuItem"
+
+			}
+		]
+	},
+	
+	{
+		"menuLabel" : "patientMyProfile",
+		"moduleId" : "patientMyProfile",
+		"type" : "menuItem",
+		"userTypes" : [
+			"PATIENT"
+		]
+	},
+	{
+		"menuLabel" : "patients",
+		"type" : "group",
+		"subMenus" : [
+			{
+				"menuLabel" : "myPatients",
+				"moduleId" : "accountPatients",
+				"type" : "menuItem"
+
+			},
+			{
+				"menuLabel" : "patientsSchedule",
+				"moduleId" : "patientsSchedule",
+				"type" : "menuItem"
+			}
+		],
+		"userTypes" : [
+			"NUTRITIONIST", 
+			"EMPLOYEE"
+		]
+	}, 
+	{
+		"menuLabel" : "clinic",
+		"moduleId" : "clinic",
+		"type" : "menuItem",
+		"subMenus" : [
+			{
+				"menuLabel" : "accountUsers",
+				"moduleId" : "accountUsers",
+				"type" : "menuItem"
+			}
+		],
+		"userTypes" : [
+			"NUTRITIONIST"
+		]
+	}
+]}

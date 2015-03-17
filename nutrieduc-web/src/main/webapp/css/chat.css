@@ -1,0 +1,233 @@
+/* @import url(http://weloveiconfonts.com/api/?family=typicons); */
+[class*="typicons-"]:before {
+	font-family: 'Typicons', sans-serif;
+}
+
+.module {
+	width: 300px;
+	margin: 20px auto;
+}
+
+.top-bar {
+	background: #008ed6;
+	color: white;
+	padding: 0.5rem;
+	position: relative;
+	overflow: hidden;
+}
+
+.top-bar h1 {
+	display: inline;
+	font-size: 1.1rem;
+}
+
+.top-bar .typicons-message {
+	display: inline-block;
+	padding: 4px 5px 2px 5px;
+}
+
+.top-bar .typicons-minus {
+	position: relative;
+	top: 3px;
+}
+
+.top-bar .left {
+	float: left;
+}
+
+.top-bar .right {
+	float: right;
+	padding-top: 5px;
+}
+
+.top-bar>* {
+	position: relative;
+}
+
+.top-bar::before {
+	content: "";
+	position: absolute;
+	top: -100%;
+	left: 0;
+	right: 0;
+	bottom: -100%;
+	opacity: 0.25;
+	background: radial-gradient(#ffffff, #000000);
+	animation: pulse 1s ease alternate infinite;
+}
+
+.discussion {
+	background-color: white;
+	list-style: none;
+	margin: 0;
+	padding: 0 0 50px 0;
+	max-height: 215px;
+	height: 215px;
+	overflow-y: scroll
+}
+
+.discussion li {
+	padding: 0.5rem;
+	overflow: hidden;
+	display: flex;
+}
+
+.discussion .avatar {
+	width: 40px;
+	position: relative;
+}
+
+.discussion .avatar img {
+	display: block;
+	width: 100%;
+}
+
+.other .avatar:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 0;
+	height: 0;
+	border: 5px solid white;
+	border-left-color: transparent;
+	border-bottom-color: transparent;
+}
+
+.chat-item-top-actions {
+	background-color: #f3f3f3;
+}
+
+.self {
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+
+.self .messages {
+	order: 1;
+	border-bottom-right-radius: 0;
+}
+
+.self .avatar {
+	order: 2;
+}
+
+.self .avatar:after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	border: 5px solid white;
+	border-right-color: transparent;
+	border-top-color: transparent;
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.messages {
+	background: white;
+	padding: 10px;
+	border-radius: 2px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.messages p {
+	/* font-size: 0.8rem; */
+	margin: 0 0 0.2rem 0;
+}
+
+.messages time {
+	font-size: 0.7rem;
+	color: #ccc;
+}
+
+@
+keyframes pulse {from { opacity:0;
+	
+}
+
+to {
+	opacity: 0.5;
+}
+
+}
+.closeChat {
+	cursor: pointer;
+	margin: 5px !important;
+}
+
+.chatarea {
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+.chat-user-list-open {
+	right: 250px;
+}
+
+.chat {
+	margin: 0px;
+	padding: 0px;
+	width: 250px;
+	float: right;
+	height: 300px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;;
+	overflow: hidden;
+	margin-right: 30px;
+	-webkit-box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.75);
+	box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+.chathead {
+	width: 250px;
+	background-color: #1a1a1a;
+	height: 30px;
+	color: #ffffff;
+	padding-top: 13px;
+	padding-left: 10px;
+	cursor: pointer;
+}
+
+.chathead img {
+	width: 20px;
+	vertical-align: middle;
+	padding-right: 10px;
+}
+
+.messageboxNew {
+	height: 100px;
+	max-height: 50px;
+	position: relative;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	margin-bottom: 0px;
+}
+
+.messageboxNew textarea {
+	width: 100%;
+	height: 100%;
+}
+
+.userChatList {
+	background-color: white;
+	width: 260px;
+	height: 100%;
+	margin-right: 0px;
+	border: 1 solid;
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	margin: 0px;
+	padding: 0px;
+	top: 60px
+}

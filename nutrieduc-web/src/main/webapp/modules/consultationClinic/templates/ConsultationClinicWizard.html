@@ -1,0 +1,31 @@
+<div class="page-info">
+	<ol class="breadcrumb row breadcrumb-font" id="tabContainer">
+		<li class="one-fifty no-padding-right">Dados Pessoais</li>
+		<li class="one-fifty no-padding-right disabled">Dados Clinícos</li>
+		<li class="one-fifty no-padding-right disabled">Hábitos de Vida</li>
+		<li class="one-fifty no-padding-right disabled">Hábitos Alimentares</li>
+		<li class="one-fifty no-padding-right disabled">Medidas e Fotos</li>
+	</ol>
+
+	<div class="">
+		<div class="progress">
+			<div class="progress-bar progress-bar-nutrieduc" role="progressbar"
+				aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"
+				style="width: 10%;"></div>
+		</div>
+	</div>
+</div>
+
+<div class="panel panel-info stepWizard">
+	<div class="panel-heading panel-heading-nutrieduc" id="currentStepTitle"></div>
+	<div class="panel-body" id="currentStepContainer"></div>
+</div>
+
+<div class="navbar">
+	<button type="button" id="btnPrevious" tabindex="-1"
+		class="btn btn-secondary hide" style="float: left">${back}</button>
+	<button type="button" id="btnNext" class="btn btn-success margin-left-10 stepNext"
+		style="float: right">${next}</button>
+	<button type="button" id="btnCancel" tabindex="-1"
+		class="btn btn-default btn-danger-custom" style="float: right">${cancel}</button>
+</div>

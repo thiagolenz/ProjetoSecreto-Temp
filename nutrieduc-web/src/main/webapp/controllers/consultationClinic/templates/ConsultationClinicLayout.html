@@ -1,0 +1,93 @@
+<div class="padding-top-50 welcome-feature-container">
+	<img src="images/logos/LogoBlue.png" width="auto" height="150">
+	<div class="row padding-top-30">
+		<div class="col-md-6">
+			<h1 class="bluecolor">
+				<strong>Bem vindos</strong>
+			</h1>
+
+			<p class="padding-top-50">
+				A Nutrieduc oferece para você e para os profissionais de saúde e bem
+				estar um<br /> sistema que facilita o gerenciamento e o controle
+				diário de sua alimentação, de <br /> forma prática e fácil de usar.
+			</p>
+
+			<p class="padding-top-30 bluecolor">
+				Antes de entrar no sistema, certifique-se que já existe o cadastro
+				do paciente no<br /> sistema Nutrieduc:
+			</p>
+
+			<div class="row padding-top-30">
+				<div class="col-md-6 no-padding-left">
+					<div class="form-group">
+						<label class="control-label" for="consultationAge">Documento
+							de RG</label> <input type="text" maxlength="20" id="documentNumber"
+							class="form-control">
+					</div>
+				</div>
+			</div>
+
+			<div class="row" id="blankSlate">
+				<button type="button" id="btnCancel"
+					class="btn btn-default margin-top-25">${cancel}</button>
+				<button type="button" id="btnContinue"
+					class="btn btn-secondary margin-top-25">${continueLabel}</button>
+			</div>
+		</div>
+
+		<div class="col-md-6 padding-top-100 ">
+			<img src="images/characters/WeightlifterWatermelon.png" width="600"
+				height="auto">
+		</div>
+	</div>
+</div>
+
+<div class="modal" id="modalContinueResult" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-vertical-centered">
+		<div class="modal-content">
+			<div class="modal-header nutrieduc-modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">Sistema Nutrieduc</h4>
+			</div>
+			<div class="modal-body bluecolor font-size-display-md text-center">
+				Foi encontrado com sucesso em nosso sistema o paciente:<strong><span
+					id="patientName" class="margin-left-10 ">Carlos Henrique
+						Gomes</span></strong>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+				<button type="button" class="btn btn-secondary btnOk">Ok,
+					Continuar</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal" id="modalNotFoundResult" tabindex="-1" role="dialog"
+	aria-labelledby="modalNotFoundResultLabel" aria-hidden="true">
+	<div class="modal-dialog modal-vertical-centered">
+		<div class="modal-content">
+			<div class="modal-header nutrieduc-modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">Sistema Nutrieduc</h4>
+			</div>
+			<div class="modal-body bluecolor font-size-display-md">
+				<p class="text-center">
+					Não foi possível encontrar este paciente em nosso cadastro.<br />
+					Deseja cadastrar este usuário em nosso sistema?
+				</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
+				<button type="button" class="btn btn-secondary btnOk">Sim, Continuar</button>
+			</div>
+		</div>
+	</div>
+</div>

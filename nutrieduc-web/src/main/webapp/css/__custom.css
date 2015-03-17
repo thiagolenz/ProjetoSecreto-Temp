@@ -1,0 +1,217 @@
+body {
+	padding-top: 100px;
+	height: 100%;
+	overflow-y: scroll;
+}
+.body-chat-users-open {
+	margin-right: 150px
+}
+
+.welcome-body {
+	background: url('../welcome/img/bg-home-nutrieduc.png') no-repeat center
+		center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.margin20 {
+	margin: 20px
+}
+
+.margin10 {
+	margin: 10px;
+}
+
+.align-right {
+	float: right;
+}
+
+.margin-top10 {
+	margin-top: 10px;
+}
+
+/**
+ Modal loading definitions
+*/
+.loading-modal-container {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.7);
+	position: absolute;
+	z-index: 2000
+}
+
+.loading-modal {
+	height: 200px;
+	width: 300px;
+	background-color: white;
+	border-style: solid;
+	border-radius: 4px 4px 4px 4px;
+	border-width: 1px;
+	border-color: #ddd;
+}
+
+.loading-modal h4 {
+	text-align: left;
+	margin: 5px;
+}
+
+.loading-modal img {
+	margin-top: 30px;
+}
+
+.loading-inside-modal {
+	position: absolute;
+	background: white;
+	opacity: 1;
+	z-index: 3000
+}
+
+/**
+  fixing some bootstrap bugs on MAC
+*/
+.modal-open,.modal-open .navbar-fixed-top {
+	margin-right: 0 !important;
+}
+
+/**
+  fixing bugs space on the strong label and message label of alert
+*/
+.alert strong {
+	margin-right: 5px
+}
+
+/**
+  input groups spacing 
+*/
+.input-line {
+	margin-bottom: 22px
+}
+
+.pagination-item:hover {
+	cursor: pointer;
+}
+
+.navbar-nav.navbar-right:last-child {
+	margin-right: 10px !important;
+}
+.row {
+	margin-left: 0px !important;
+}
+
+
+
+/** 
+autocomplete
+*/
+
+.autocomplete-item:hover {
+	cursor: pointer;
+}
+div.tagsinput {
+	background: #FFF;
+	overflow-y: auto;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+   	margin: 0;
+   	transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+ 
+div.tagsinput.focus {
+   border-color: #66AFE9;
+   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
+   outline: 0 none;
+}
+
+.has-error .tagsinput {
+	border-color: #a94442;
+}
+
+.has-error .tagsinput.focus {
+   border-color: #a94442;
+   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
+   box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
+   outline: 0 none;
+}
+
+div.tagsinput span.tag {
+	border: 1px solid #999D9E;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	display: block;
+	float: left;
+	padding: 5px;
+	text-decoration: none;
+	background:#EEEEEE;
+	margin-right: 5px;
+	font-size: 13px;
+}
+.tag span {
+	margin-right: 5px;
+}
+
+div.tagsinput span.tag a {
+	font-weight: bold;
+	color: #82ad2b;
+	text-decoration: none;
+	font-size: 11px;
+}
+
+div.tagsinput input {
+	margin: 0px;
+	font-family: helvetica;
+	font-size: 13px;
+	border: 1px solid transparent;
+	padding: 5px;
+	background: transparent;
+	color: #000;
+	outline: 0px;
+	margin-right: 5px;
+}
+
+div.tagsinput div {
+	display: block;
+	float: left;
+}
+
+.tags_clear {
+	clear: both;
+	width: 100%;
+	height: 0px;
+}
+
+.tagsinput[disabled], .tagsinput input[disabled]  {
+	cursor: not-allowed;
+	background-color: #eee
+}
+/**
+End Autocomplete
+**/
+.dash-widget-body {
+	height: 230px;
+}
+
+
+.navbarCustom {
+	background: #008ed6;
+	border : 0px;
+}
+
+.navbar-default .navbar-brand ,
+.navbar-default .navbar-nav > li a {
+	color: white;	
+}
+
+.column {
+	float: left;
+}
+
+.oneSixty {
+	width: 16%;
+}
+.fiveSixty {
+	width: 84%;
+}
