@@ -16,7 +16,9 @@ import com.redfire.nutrieduc.userprofile.dao.ConsultationClinicalDataDAO;
 import com.redfire.nutrieduc.userprofile.dao.ConsultationDAO;
 import com.redfire.nutrieduc.userprofile.dao.ConsultationEatingHabitDAO;
 import com.redfire.nutrieduc.userprofile.dao.ConsultationLifeHabitDAO;
+import com.redfire.nutrieduc.userprofile.service.ConsultationFatCalculation;
 import com.redfire.nutrieduc.userprofile.service.ConsultationService;
+import com.redfire.nutrieduc.userprofile.service.UserInfoProfileService;
 
 @Service
 public class ConsultationServiceImpl implements ConsultationService {
@@ -25,6 +27,9 @@ public class ConsultationServiceImpl implements ConsultationService {
 	@Autowired private ConsultationClinicalDataDAO clinicalDataDAO;
 	@Autowired private ConsultationEatingHabitDAO eatingHabitDAO;
 	@Autowired private ConsultationLifeHabitDAO lifeHabitDAO;	
+	
+	@Autowired private ConsultationFatCalculation consultationFatCalculation;
+	@Autowired private UserInfoProfileService infoProfileService;
 
 	@Transactional
 	public ServiceCollectionResponse<Consultation> retrieve(
@@ -36,6 +41,7 @@ public class ConsultationServiceImpl implements ConsultationService {
 	public void insert(Consultation consultation) {
 		consultation.setConsultationStatus(ConsultationStatus.PENDING);
 		consultation.setCreateDate(new Date());
+		consultationFatCalculation.calculate(consultation, infoProfileService.getFromUser(consultation.getUserPatient().getId()));
 		bodyMeasureDAO.insert(consultation.getBodyMeasure());
 		clinicalDataDAO.insert(consultation.getClinicalData());
 		eatingHabitDAO.insert(consultation.getEatingHabit());

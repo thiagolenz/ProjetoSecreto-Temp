@@ -10,12 +10,13 @@ define (["components/HtmlLoader",
          "modules/consultationView/ConsultationViewEatingHabitPanel",
          "modules/consultationView/ConsultationViewBodyMeasuresPanel",
          "modules/consultationView/ConsultationViewPicturesPanel",
+         "modules/consultationView/ConsultationViewFatPercentPanel",
          "modules/consultationView/ConsultationViewPrint",
          "components/ModuleEvent"
 ], 
 function (htmlLoader, service, i18ns, i18ns_g, userProfilePanel, nutritionistInfoPanel, 
 		objectivePanel, clinicalPanel, lifeHabitPanel, eatingHabitPanel, bodyMeasuresPanel, 
-		picturesPanel, viewPrint, moduleEvent){
+		picturesPanel, fatPercentPanel, viewPrint, moduleEvent){
 	function load (container, consultation) {
 		htmlLoader.load({
 			container: container,
@@ -42,6 +43,7 @@ function (htmlLoader, service, i18ns, i18ns_g, userProfilePanel, nutritionistInf
 		eatingHabitPanel.load ("#eatingHabitPanel", consultation);
 		bodyMeasuresPanel.load ("#bodyMeasuresPanel", consultation);
 		picturesPanel.load ("#picturesPanel", consultation);
+		fatPercentPanel.load ("#fatPercentPanel", consultation);
 		
 	}
 	function bindEvents () {

@@ -3,119 +3,85 @@ package com.redfire.nutrieduc.userprofile.service.impl;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+import org.springframework.stereotype.Service;
+
 import com.redfire.nutrieduc.entities.consultation.Consultation;
+import com.redfire.nutrieduc.entities.consultation.ConsultationBodyMeasure;
+import com.redfire.nutrieduc.entities.user.GenderType;
 import com.redfire.nutrieduc.entities.user.UserInfoProfile;
 import com.redfire.nutrieduc.userprofile.service.ConsultationFatCalculation;
 
-public class ConsultationFatCalculationImpl implements
-		ConsultationFatCalculation {
+@Service
+public class ConsultationFatCalculationImpl implements ConsultationFatCalculation {
 
 	@Override
-	public double calculate(Consultation cons, UserInfoProfile infoProfile) {
-		double pct = 5.6;
-		double pcse = 9.4;
-		//double pcb = 3.2;
-		double pcsi = 5.3;
-		double pcab = 11.2;
-		double pcc = 9.4;
-		//double pcax = 6.3;
-		double pcp = 5.1;
+	public void calculate(Consultation cons, UserInfoProfile infoProfile) {
+		ConsultationBodyMeasure bodyMeasure = cons.getBodyMeasure();
+		BigDecimal pct = bodyMeasure.getBendingTriceps();
+		BigDecimal pcb = bodyMeasure.getBendingBiceps();
+		BigDecimal pcse = bodyMeasure.getBendingBack();
+		BigDecimal pcsi = bodyMeasure.getFoldBelt();
+		BigDecimal pcab = bodyMeasure.getAbdominalTuck();
+		BigDecimal pcc = bodyMeasure.getBendingThigh();
+		BigDecimal pcp = bodyMeasure.getPectoralFold();
 		
-		double percentualGorduraGuedesSiri = 0;
-		double percentualGorduraJackPolloSiri = 0;
-		double percentualGorduraDurninWomersley = 0;
-		double idade = 25;
-		
-		
+		Long idade = infoProfile.getAge();
+
+		calculateFaulkner(bodyMeasure, pct, pcse, pcsi, pcab);
+		calculateGuedes(infoProfile, bodyMeasure, pct, pcse, pcsi, pcab, pcc);
+		calculateJackson(infoProfile, bodyMeasure, pct, pcsi, pcab, pcc, pcp, idade);
+
+
+		calculateDurnin(infoProfile, bodyMeasure, pct, pcb, pcse, pcsi);
+	}
+
+	private void calculateDurnin(UserInfoProfile infoProfile,
+			ConsultationBodyMeasure bodyMeasure, BigDecimal pct,
+			BigDecimal pcb, BigDecimal pcse, BigDecimal pcsi) {
+		if (allValuesAreValid(pcb, pct, pcse, pcsi) && infoProfile.getGenderType() == GenderType.MALE) {
+			BigDecimal densidadeCorporalDurninWomersleyHomem = densidadeCorporalDurninWomersleyHomem(pcb, pct, pcse, pcsi, 45);
+			bodyMeasure.setDurninWomersleyFatPercent(formulaSiri(densidadeCorporalDurninWomersleyHomem));
+		} else if (allValuesAreValid(pcb, pct, pcse, pcsi)) {
+			BigDecimal densidadeCorporalDurninWomersley = densidadeCorporalDurninWomersleyMulher(pcb, pct, pcse, pcsi, 45);
+			bodyMeasure.setDurninWomersleyFatPercent(formulaSiri(densidadeCorporalDurninWomersley));
+		}
+	}
+
+	private void calculateJackson(UserInfoProfile infoProfile,
+			ConsultationBodyMeasure bodyMeasure, BigDecimal pct,
+			BigDecimal pcsi, BigDecimal pcab, BigDecimal pcc, BigDecimal pcp,
+			Long idade) {
+		if (allValuesAreValid(pcp, pcab, pcc) && infoProfile.getGenderType() == GenderType.MALE) {
+			BigDecimal densidadeCorporalJacksonPollockHomem = densidadeCorporalJacksonPollockHomem(pcp, pcab, pcc, idade);
+		    bodyMeasure.setJacksonPolloFatPercent(formulaSiri(densidadeCorporalJacksonPollockHomem));
+		} else if (allValuesAreValid(pct, pcsi, pcc)) {
+			BigDecimal densidadeCorporalJacksonPollockMulher = densidadeCorporalJacksonPollockMulher(pct, pcsi, pcc, idade);
+			bodyMeasure.setJacksonPolloFatPercent(formulaSiri(densidadeCorporalJacksonPollockMulher));
+		}
+	}
+
+	private void calculateGuedes(UserInfoProfile infoProfile,
+			ConsultationBodyMeasure bodyMeasure, BigDecimal pct,
+			BigDecimal pcse, BigDecimal pcsi, BigDecimal pcab, BigDecimal pcc) {
+		if (allValuesAreValid(pct, pcsi, pcab) && infoProfile.getGenderType() == GenderType.MALE) {
+			BigDecimal densidadeCorporalGuedesHomem = densidadeCorporalGuedesParaHomens(pct, pcsi, pcab);
+			bodyMeasure.setGuedesFatPercent(formulaSiri(densidadeCorporalGuedesHomem));
+		} else if (allValuesAreValid(pcc, pcsi, pcse)){
+			BigDecimal densidadeCorporalGuedesMulher = densidadeCorporalGuedesParaMulheres(pcc, pcsi, pcse);
+			bodyMeasure.setGuedesFatPercent(formulaSiri(densidadeCorporalGuedesMulher));
+		}
+	}
+
+	private void calculateFaulkner(ConsultationBodyMeasure bodyMeasure,
+			BigDecimal pct, BigDecimal pcse, BigDecimal pcsi, BigDecimal pcab) {
 		/*
 		 * Exemplo para calcular o percentual de gordura segundo Faulkner
 		 * o cálculo seve tanto para mulheres quanto para homens
 		 */
-		double percentual = formulaFaulkner(pct, pcse, pcsi, pcab);
-		
-		System.out.println("Percentual de gordura segundo Faulkner: " + percentual);
-		
-		
-		/*
-		 * Exemplo para calcular o percentual de gordura segundo a formula de siri
-		 * combinado com calculo de densidade corporal de guedes para HOMEM
-		 */
-		double densidadeCorporalGuedesHomem = densidadeCorporalGuedesParaHomens(pct, pcsi, pcab);
-		
-		System.out.println("Densidade corporal HOMEM segundo Guedes: " + densidadeCorporalGuedesHomem);
-		
-		percentualGorduraGuedesSiri = formulaSiri(densidadeCorporalGuedesHomem);
-		
-		System.out.println("Percentual de gordura HOMEM guedes + siri: " + percentualGorduraGuedesSiri);
-		
-		/*
-		 * Exemplo para calcular o percentual de gordura segundo a formula de siri
-		 * combinado com calculo de densidade corporal de guedes para MULHER
-		 */
-		double densidadeCorporalGuedesMulher = densidadeCorporalGuedesParaMulheres(pcc, pcsi, pcse);
-		
-		System.out.println("Densidade corporal MULHER segundo Guedes: " + densidadeCorporalGuedesMulher);
-		
-		percentualGorduraGuedesSiri = formulaSiri(densidadeCorporalGuedesMulher);
-		
-		System.out.println("Percentual de gordura MULHER guedes + siri: " + percentualGorduraGuedesSiri);
-		 
-		
-		/*
-		 * Exemplo para calcular o percentual de gordura segundo a formula de siri
-		 * combinado com calculo de densidade corporal de Jackson e Pollock para HOMEM
-		 */
-		double densidadeCorporalJacksonPollockHomem = densidadeCorporalJacksonPollockHomem(pcp, pcab, pcc, idade);
-		
-		System.out.println("Densidade corporal HOMEM segundo Jackson e Pollock: " + densidadeCorporalJacksonPollockHomem);
-		
-		percentualGorduraJackPolloSiri = formulaSiri(densidadeCorporalJacksonPollockHomem);
-		
-		System.out.println("Percentual de gordura HOMEM Jackson e Pollock + siri: " + percentualGorduraJackPolloSiri);
-		
-		/*
-		 * Exemplo para calcular o percentual de gordura segundo a formula de siri
-		 * combinado com calculo de densidade corporal de Jackson e Pollock para MULHER 
-		 */
-		double densidadeCorporalJacksonPollockMulher = densidadeCorporalJacksonPollockMulher(pct, pcsi, pcc, idade);
-		
-		System.out.println("Densidade corporal HOMEM segundo Jackson e Pollock: " + densidadeCorporalJacksonPollockMulher);
-		
-		percentualGorduraJackPolloSiri = formulaSiri(densidadeCorporalJacksonPollockMulher);
-		
-		System.out.println("Percentual de gordura MULHER Jackson e Pollock + siri: " + percentualGorduraJackPolloSiri);
-		
-		
-		
-		
-		/*
-		 * Exemplo para caulcar o percentual de gordura segundo a formula de siri
-		 * combinado com calculo de densidade corportal de Durnin Womers para MULHER
-		 */
-		double densidadeCorporalDurninWomersley =  densidadeCorporalDurninWomersleyMulher(7, 11, 12, 12, 45);
-		
-		System.out.println("Densidade corporal MHULHER segundo Durnin e Womersley: " + densidadeCorporalJacksonPollockMulher);
-		
-		percentualGorduraDurninWomersley = formulaSiri(densidadeCorporalDurninWomersley);
-		
-		System.out.println("Percentual de gordura MULHER Durnin e Womersley + siri: " + percentualGorduraDurninWomersley);
-		
-		
-		/*
-		 * Exemplo para caulcar o percentual de gordura segundo a formula de siri
-		 * combinado com calculo de densidade corportal de Durnin Womers para HOMEM
-		 */
-		double densidadeCorporalDurninWomersleyHomem =  densidadeCorporalDurninWomersleyHomem(7, 11, 12, 12, 45);
-		
-		System.out.println("Densidade corporal HOMEM segundo Durnin e Womersley: " + densidadeCorporalDurninWomersleyHomem);
-		
-		percentualGorduraDurninWomersley = formulaSiri(densidadeCorporalDurninWomersleyHomem);
-		
-		System.out.println("Percentual de gordura HOMEM Durnin e Womersley + siri: " + percentualGorduraDurninWomersley);
-		
-		return densidadeCorporalDurninWomersleyHomem;
+		if (allValuesAreValid(pct, pcse, pcsi, pcab))		
+			bodyMeasure.setFaulknerFatPercent(formulaFaulkner(pct, pcse, pcsi, pcab));
 	}
-	
+
 	/**
 	 * Protoloco de Faulkner para calcular o percentural de gordura,
 	 * caso algum dos valores dos parametros seja zero, não aplicar,
@@ -127,17 +93,18 @@ public class ConsultationFatCalculationImpl implements
 	 * @param pcab - Dobra abdominal ou Abdominal
 	 * @return
 	 */
-	public double formulaFaulkner(double pct, double pcse, double pcsi, double pcab){
-		
-		double percentualGordura = 0;
-		
-		double somatorio = pct + pcse + pcsi + pcab;
+	public BigDecimal formulaFaulkner(BigDecimal pct, BigDecimal pcse, BigDecimal pcsi, BigDecimal pcab){
 
-		percentualGordura = 5.783 + 0.153 * (somatorio); 
-		
+		BigDecimal percentualGordura = BigDecimal.ZERO;
+
+		BigDecimal sumarize = pct.add(pcse).add(pcsi).add(pcab);
+
+		BigDecimal multiplicand = new BigDecimal(5.783 + 0.153);
+		percentualGordura = sumarize.multiply(multiplicand) ; 
+
 		return percentualGordura;
 	}
-	
+
 	/**
 	 * Protocolo para calcular a densidade corporal para homens,
 	 * segundo Guedes, caso algum valor desses seja zero, não fazer a chamada
@@ -148,17 +115,13 @@ public class ConsultationFatCalculationImpl implements
 	 * @param pcab - Dobra abdominal ou Abdominal
 	 * @return
 	 */
-	public double densidadeCorporalGuedesParaHomens(double pct, double pcsi, double pcab){
-		
-		double densidadeCorporal = 0;
-	
-		double somatorio = pct + pcsi + pcab;
-		
-		densidadeCorporal = 1.17136 - 0.06706 * Math.log10(somatorio);  
-		
+	public BigDecimal densidadeCorporalGuedesParaHomens(BigDecimal pct, BigDecimal pcsi, BigDecimal pcab){
+		BigDecimal somatorio = pct.add(pcsi).add(pcab);
+		BigDecimal multiplicand = new BigDecimal(Math.log10(somatorio.doubleValue())); 
+		BigDecimal densidadeCorporal = new BigDecimal(1.17136 - 0.06706).multiply(multiplicand);  	
 		return densidadeCorporal;
 	}
-	
+
 	/**
 	 * Protocolo para calcular a densidade corporal para homens,
 	 * segundo Guedes, caso algum valor desses seja zero, não fazer a chamada
@@ -169,17 +132,14 @@ public class ConsultationFatCalculationImpl implements
 	 * @param pcse - Dobra de costa ou Subescapular
 	 * @return
 	 */
-	public double densidadeCorporalGuedesParaMulheres(double pcc, double pcsi, double pcse){
-		
-		double densidadeCorporal = 0;
-	
-		double somatorio = pcc + pcsi + pcse;
-		
-		densidadeCorporal = 1.16650 - 0.07063 * Math.log10(somatorio);  
-		
+	public BigDecimal densidadeCorporalGuedesParaMulheres(BigDecimal pcc, BigDecimal pcsi, BigDecimal pcse){
+		BigDecimal somatorio = pcc.add(pcsi).add(pcse);
+		BigDecimal multiplicand = new BigDecimal(Math.log10(somatorio.doubleValue())); 
+		BigDecimal densidadeCorporal = new BigDecimal(1.16650 - 0.07063).multiply(multiplicand);  
+
 		return densidadeCorporal;
 	}
-	
+
 	/**
 	 * 
 	 * Protocolo para encontrar a densidade corporal para homens entre 18 e 61 anos
@@ -192,19 +152,17 @@ public class ConsultationFatCalculationImpl implements
 	 * @param idade - idade da pessoa
 	 * @return
 	 */
-	public double densidadeCorporalJacksonPollockHomem(double pcp, double pcab, double pcc, double idade){
-		
-		double densidadeCorporal = 0;
-		
-		double somatorio = 0;
+	public BigDecimal densidadeCorporalJacksonPollockHomem(BigDecimal pcp, BigDecimal pcab, BigDecimal pcc, long idade){
 
-		somatorio = pcp + pcab + pcc;
+		BigDecimal sumarize = pcp.add(pcab).add(pcc);
 
-		densidadeCorporal =  1.1093800 - 0.0008267 * somatorio  + 0.0000016 * Math.pow(somatorio, 2) - 0.0002574 * idade;
+		BigDecimal densidadeCorporal = new BigDecimal(1.1093800 - 0.0008267).multiply(sumarize);
+		densidadeCorporal = densidadeCorporal.add(new BigDecimal(0.0000016 * Math.pow(sumarize.doubleValue(), 2) - 0.0002574));
+		densidadeCorporal = densidadeCorporal.multiply(new BigDecimal(idade));
 
 		return densidadeCorporal;
 	}
-	
+
 	/**
 	 * 
 	 * Protocolo para encontrar a densidade corporal para mulheres entre 18 e 55 anos
@@ -217,20 +175,18 @@ public class ConsultationFatCalculationImpl implements
 	 * @param idade - idade da pessoa
 	 * @return
 	 */
-	public double densidadeCorporalJacksonPollockMulher(double pct, double pcsi, double pcc, double idade){
-		
-		double densidadeCorporal = 0;
-		
-		double somatorio = 0;
-		
-		somatorio = pct + pcsi + pcc;
-		
-		densidadeCorporal =  1.0994921 - 0.0009929 * somatorio + 0.0000023 * Math.pow(somatorio, 2) - 0.0001392 * idade;
+	public BigDecimal densidadeCorporalJacksonPollockMulher(BigDecimal pct, BigDecimal pcsi, BigDecimal pcc, long idade){
 
+		BigDecimal sumarize = pct.add(pcsi).add(pcc);
+		
+		BigDecimal densidadeCorporal = new BigDecimal(1.0994921 - 0.0009929).multiply(sumarize);
+		densidadeCorporal = densidadeCorporal.add(new BigDecimal(0.0000023 * Math.pow(sumarize.doubleValue(), 2) - 0.0001392));
+		densidadeCorporal = densidadeCorporal.multiply(new BigDecimal(idade));
+		
 		return densidadeCorporal;
 	}
-	
-	
+
+
 	/**
 	 * A formula de siri se calcula o percentual de gordura com base
 	 * no valor da densidade corporal e também do sexo.
@@ -240,17 +196,11 @@ public class ConsultationFatCalculationImpl implements
 	 * @param male
 	 * @return
 	 */
-	public double formulaSiri(double densidadeCorporal){
-		
-		double percentualGordura = 0;
-		
-		percentualGordura = ( (4.95 / densidadeCorporal) - 4.50 ) * 100;
-		
-		BigDecimal bd = new BigDecimal(percentualGordura).setScale(2, RoundingMode.HALF_EVEN);
-		
-		return bd.doubleValue();
+	public BigDecimal formulaSiri(BigDecimal densidadeCorporal){
+		BigDecimal percentualGordura = new BigDecimal(( (4.95 / densidadeCorporal.doubleValue()) - 4.50 ) * 100);
+		return percentualGordura.setScale(2, RoundingMode.HALF_EVEN);
 	}
-	
+
 	/**
 	 * Protocolo de Durnin e Womersley para cálculo de 
 	 * densidade corporal para MULHERES, caso algum valor passado como parametro
@@ -263,40 +213,29 @@ public class ConsultationFatCalculationImpl implements
 	 * @param idade
 	 * @return
 	 */
-	public double densidadeCorporalDurninWomersleyMulher(double pcb, double pct, double pcse, double pcsi, double idade){
-		
-		double densidadeCorporal = 0;
-		
-		double somatorio = pcb+ pct + pcse + pcsi;
-		
-		if(idade < 17){
-			
-			densidadeCorporal =  1.1369 - (0.0598 * Math.log10(somatorio));
-		}
-		if(idade >=17 && idade <=19){
-			
-			densidadeCorporal = 1.1549 - (0.0678 * Math.log10(somatorio));
-		}
-		if(idade >=20 && idade <=29){
+	public BigDecimal densidadeCorporalDurninWomersleyMulher(BigDecimal pcb, BigDecimal pct, BigDecimal pcse, BigDecimal pcsi, long idade){
 
-			densidadeCorporal =  1.1599 - (0.0717 * Math.log10(somatorio));
-		}
-		if(idade>=30 && idade<=39){
-			
-			densidadeCorporal =  1.1423 - (0.0632 * Math.log10(somatorio));
-		}
-		if(idade>=40 && idade<=49){
-			
-			densidadeCorporal =  1.1333 - (0.0612 * Math.log10(somatorio));
-		}
-		if(idade>=50){
+		BigDecimal densidadeCorporal = BigDecimal.ZERO;
 
-			densidadeCorporal =  1.1339 - (0.0645 * Math.log10(somatorio));
+		BigDecimal somatorio = pcb.add(pct).add(pcse).add(pcsi);
+
+		if (idade < 17) {
+			densidadeCorporal = new BigDecimal(1.1369).subtract(new BigDecimal(0.0598 * Math.log10(somatorio.doubleValue())));
+		} else if(idade >= 17 && idade <= 19) {
+			densidadeCorporal = new BigDecimal(1.1549).subtract(new BigDecimal(0.0678 * Math.log10(somatorio.doubleValue())));
+		} else if (idade >= 20 && idade <= 29) {
+			densidadeCorporal = new BigDecimal(1.1599).subtract(new BigDecimal(0.0717 * Math.log10(somatorio.doubleValue())));
+		} else if(idade >= 30 && idade <= 39) {
+			densidadeCorporal = new BigDecimal(1.1423).subtract(new BigDecimal(0.0632 * Math.log10(somatorio.doubleValue())));
+		} else if (idade >= 40 && idade <= 49) {
+			densidadeCorporal = new BigDecimal(1.1333).subtract(new BigDecimal(0.0612 * Math.log10(somatorio.doubleValue())));
+		} else if (idade >= 50) {
+			densidadeCorporal = new BigDecimal(1.1339).subtract(new BigDecimal(0.0645 * Math.log10(somatorio.doubleValue())));
 		}
-		
+
 		return densidadeCorporal;
 	}
-	
+
 	/**
 	 * 
 	 * Protocolo de Durnin e Womersley para cálculo de 
@@ -311,38 +250,35 @@ public class ConsultationFatCalculationImpl implements
 	 * 
 	 * @return
 	 */
-	public double densidadeCorporalDurninWomersleyHomem(double pcb, double pct, double pcse, double pcsi, double idade){
-		
-		double densidadeCorporal = 0;
-		
-		double somatorio = pcb+ pct + pcse + pcsi;
-		
-		if(idade < 17){
-			
-			densidadeCorporal = 1.1533 - (0.0643 * Math.log10(somatorio));
-		}
-		if(idade >=17 && idade <=19){
-			
-			densidadeCorporal = 1.1620 - (0.0630 * Math.log10(somatorio));
-		}
-		if(idade >=20 && idade <=29){
+	public BigDecimal densidadeCorporalDurninWomersleyHomem(BigDecimal pcb, BigDecimal pct, BigDecimal pcse, BigDecimal pcsi, long idade){
 
-			densidadeCorporal = 1.1631 - (0.0632 * Math.log10(somatorio));
+		BigDecimal densidadeCorporal = BigDecimal.ZERO;
+
+		BigDecimal somatorio = pcb.add(pct).add(pcse).add(pcsi);
+
+		if (idade < 17) {
+			densidadeCorporal = new BigDecimal(1.1533).subtract(new BigDecimal(0.0643 * Math.log10(somatorio.doubleValue())));
+		} else if (idade >= 17 && idade <= 19) {
+			densidadeCorporal = new BigDecimal(1.1620).subtract(new BigDecimal(0.0630 * Math.log10(somatorio.doubleValue())));
+		} else if (idade >= 20 && idade <= 29) {
+			densidadeCorporal = new BigDecimal(1.1631).subtract(new BigDecimal(0.0632 * Math.log10(somatorio.doubleValue())));
+		} else if (idade >= 30 && idade <= 39) {
+			densidadeCorporal = new BigDecimal(1.1422).subtract(new BigDecimal(0.0544 * Math.log10(somatorio.doubleValue())));
+		} else if (idade >= 40 && idade <= 49) {
+			densidadeCorporal = new BigDecimal(1.1620).subtract(new BigDecimal(0.0700 * Math.log10(somatorio.doubleValue())));
+		} else if (idade >= 50) {
+			densidadeCorporal = new BigDecimal(1.1715).subtract(new BigDecimal(0.0779 * Math.log10(somatorio.doubleValue())));
 		}
-		if(idade>=30 && idade<=39){
-			
-			densidadeCorporal = 1.1422 - (0.0544 * Math.log10(somatorio));
-		}
-		if(idade>=40 && idade<=49){
-			
-			densidadeCorporal = 1.1620 - (0.0700 * Math.log10(somatorio));
-		}
-		if(idade>=50){
-			
-			densidadeCorporal =  1.1715 - (0.0779 * Math.log10(somatorio));
-		}
-		
+
 		return densidadeCorporal;
+	}
+
+	private boolean allValuesAreValid (BigDecimal ... values){
+		for (BigDecimal value : values) {
+			if (value == null || value.equals(BigDecimal.ZERO))
+				return false;
+		}
+		return true;
 	}
 
 }

@@ -19,3 +19,8 @@ alter table accountpatient add avatarBase64 text;
 
 alter table consultation add consultationStatus varchar (20);
 update consultation set consultationStatus = 'PENDING';
+
+alter table ConsultationBodyMeasure add faulknerFatPercent numeric (9,2);
+alter table ConsultationBodyMeasure add guedesFatPercent numeric (9,2);
+alter table ConsultationBodyMeasure add jacksonPolloFatPercent numeric (9,2);
+alter table ConsultationBodyMeasure add durninWomersleyFatPercent numeric (9,2);
